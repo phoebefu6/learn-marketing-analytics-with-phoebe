@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Angles session 5 of 6. Segment and value: acquisition cost with its base stated, payback on margin rather than revenue, customer value as an input, and the difference between the average cost of a customer and the cost of the next one, read on a constructed tea brand's six channels.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="Segment and value: who deserves the next dollar - learn marketing analytics with phoebe">
+<meta property="og:description" content="Angles session 5 of 6. CAC with its base, payback on margin, and why the next dollar costs more than the average one.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-marketing-analytics-with-phoebe/courses/a5-segment-and-value.html">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-marketing-analytics-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Segment and value: who deserves the next dollar - learn marketing analytics with phoebe">
+<meta name="twitter:description" content="Angles session 5 of 6. CAC with its base, payback on margin, average against marginal cost.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-marketing-analytics-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Angles session 5 · Segment and value: who deserves the next dollar - learn marketing analytics with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=3">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-marketing-analytics-with-phoebe</a> / Angles session 5 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn Marketing Analytics with Phoebe · Angles session 5 of 6</div>
+    <h1>Segment and value: <span class="accent">who deserves the next dollar</span></h1>
+    <p class="sub">"What is our CAC?" sounds like a question with one answer. It has at least three decisions hidden inside it: what counts as the cost, what counts as a new customer, and which channels get averaged together. Then comes the question the budget meeting actually asks, which is not "what did a customer cost us last quarter" but "what will the next one cost, and will she pay us back?" Tonight reads Kettle &amp; Co's six acquisition channels the way a finance partner would: cost with its base stated, payback on margin rather than revenue, customer value as an input you borrow rather than invent, and the gap between the average customer and the next one.</p>
+    <div class="chip-row">
+      <span class="chip level">🟠 Angles</span>
+      <span class="chip audience">Data analysts and data scientists who serve marketing, brand and BD</span>
+      <span class="chip audience">No code</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:4">3-18 · CAC, payback, the next dollar</span>
+      <span class="a3" style="flex:5">18-40 · Build-along: a payback table</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where we start</h2>
+    </div>
+    <p class="lede">Angles session 4 showed that channels bring different customers: paid social's repeat curve flattens at 22 percent while organic search's climbs to 41. Tonight puts money on those curves. Every number comes from one constructed table, Kettle &amp; Co's Q3 2026 acquisition by channel, in pounds. The table is invented and labelled so every time it appears; the arithmetic is the real thing, and it is the same arithmetic you will run on your own company's order table. The marketing lead wants to know where the next quarter's money should go. The data team's job is to put the evidence and its uncertainty on the table. Where the money goes is her call, because she is the one who lives with the result.</p>
+
+    <div class="legend">
+      <span class="pill">🎫 Clear all three quiz questions to stamp your passport</span>
+      <span class="pill">Live = presented in the 45 minutes</span>
+      <span class="pill">Self-study = the full depth, after class</span>
+      <span class="pill">★ Build-along = everyone works it through</span>
+    </div>
+
+    <div class="callout win">
+      <p><strong>★ What you walk out with tonight.</strong> A CAC that always travels with its numerator and its definition of "new", a payback month computed on margin, a clear line between using customer value and computing it, the habit of asking what the next pound buys rather than what the last one did, and a one-page evidence note that leaves the decision with the person who owns it.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-1">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers CAC with its base</span>
+      <h2>A CAC is a fraction, so say what is on top and underneath</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">Customer acquisition cost is spend divided by new customers. The division is trivial; the two words are not. Change what goes on top, media only or fully loaded with fees and staff time, and the number moves. Change what counts underneath, every first order or only first-ever orders with duplicates removed, and it moves again. And add the six channels together into one blended figure and you get a number that is true of none of them.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 374" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Six hand-drawn fraction cards, one per channel, each showing spend over new customers equals CAC: paid search 18,000 over 600 is 30.0; paid social 24,000 over 800 is 30.0; creators 9,000 over 250 is 36.0; affiliate 6,000 over 400 is 15.0; organic search 4,000 of content cost over 500 is 8.0; PR 3,000 over 120 is 25.0. Below, a saffron tile shows the blended figure, 64,000 over 2,670 new customers, CAC 24.0. Beside it a scale from 0 to 40 pounds marks each channel's CAC from 8.0 to 36.0, with the blended 24.0 sitting in the middle of a spread it hides.">
+        <defs>
+          <filter id="a5aSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="5" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="a5aHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#2B22A8" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="a5aAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1A1830" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .a5aH { font: 800 12px Inter, sans-serif; fill: #1A1830; }
+          .a5aL { font: 600 12px Inter, sans-serif; fill: #1A1830; }
+          .a5aS { font: 400 11px Inter, sans-serif; fill: #5E5B78; }
+          .a5aB { font: 800 11px Inter, sans-serif; fill: #5C3C00; }
+          .a5aV { font: 800 18px Inter, sans-serif; fill: #1B1470; }
+          .a5aA { font: 700 11px Inter, sans-serif; fill: #2B22A8; letter-spacing: .05em; }
+          .a5aN { font: 400 12px Inter, sans-serif; fill: #5E5B78; }
+        </style>
+
+        <text class="a5aH" x="30" y="26">SPEND / NEW CUSTOMERS = CAC, PER CHANNEL</text>
+        <text class="a5aS" x="340" y="26">Kettle &amp; Co, Q3 2026, constructed, pounds</text>
+
+        <g filter="url(#a5aSk)" fill="none" stroke="#1A1830" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="30" y="50" width="130" height="108" rx="6" transform="rotate(-1 95 104)" fill="#F0EFFB"/>
+          <rect x="168" y="50" width="130" height="108" rx="6" transform="rotate(0.8 233 104)" fill="#F0EFFB"/>
+          <rect x="306" y="50" width="130" height="108" rx="6" transform="rotate(-0.6 371 104)" fill="#F0EFFB"/>
+          <rect x="444" y="50" width="130" height="108" rx="6" transform="rotate(1 509 104)" fill="#F0EFFB"/>
+          <rect x="582" y="50" width="130" height="108" rx="6" transform="rotate(-0.8 647 104)" fill="#F0EFFB"/>
+          <rect x="720" y="50" width="130" height="108" rx="6" transform="rotate(0.6 785 104)" fill="#F0EFFB"/>
+          <!-- fraction rules -->
+          <path d="M50 110 L140 110 M188 110 L278 110 M326 110 L416 110 M464 110 L554 110 M602 110 L692 110 M740 110 L830 110" stroke="#2B22A8"/>
+          <!-- blended tile, the one thing -->
+          <rect x="30" y="214" width="250" height="106" rx="8" transform="rotate(-0.6 155 267)" fill="#FBF3E2" stroke="#8A5A00"/>
+          <!-- the spread scale -->
+          <path d="M330 284 L850 284" marker-end="url(#a5aAr)"/>
+          <path d="M434 276 L434 292 M525 276 L525 292 M655 276 L655 292 M720 276 L720 292 M798 276 L798 292" stroke="#2B22A8" stroke-width="2.5"/>
+          <circle cx="642" cy="284" r="6" fill="#8A5A00" stroke="#8A5A00"/>
+          <path d="M434 312 L434 320 L798 320 L798 312" stroke="#8A5A00"/>
+          <!-- doodle: a teacup -->
+          <path d="M818 12 L846 12 L842 28 L822 28 Z"/>
+          <path d="M846 16 C855 16 855 24 844 24"/>
+        </g>
+
+        <text class="a5aL" x="95" y="72" text-anchor="middle">Paid search</text>
+        <text class="a5aV" x="95" y="100" text-anchor="middle">18,000</text>
+        <text class="a5aL" x="95" y="128" text-anchor="middle">600 new</text>
+        <text class="a5aB" x="95" y="146" text-anchor="middle">CAC 30.0</text>
+
+        <text class="a5aL" x="233" y="72" text-anchor="middle">Paid social</text>
+        <text class="a5aV" x="233" y="100" text-anchor="middle">24,000</text>
+        <text class="a5aL" x="233" y="128" text-anchor="middle">800 new</text>
+        <text class="a5aB" x="233" y="146" text-anchor="middle">CAC 30.0</text>
+
+        <text class="a5aL" x="371" y="72" text-anchor="middle">Creators</text>
+        <text class="a5aV" x="371" y="100" text-anchor="middle">9,000</text>
+        <text class="a5aL" x="371" y="128" text-anchor="middle">250 new</text>
+        <text class="a5aB" x="371" y="146" text-anchor="middle">CAC 36.0</text>
+
+        <text class="a5aL" x="509" y="72" text-anchor="middle">Affiliate</text>
+        <text class="a5aV" x="509" y="100" text-anchor="middle">6,000</text>
+        <text class="a5aL" x="509" y="128" text-anchor="middle">400 new</text>
+        <text class="a5aB" x="509" y="146" text-anchor="middle">CAC 15.0</text>
+
+        <text class="a5aL" x="647" y="72" text-anchor="middle">Organic search</text>
+        <text class="a5aV" x="647" y="100" text-anchor="middle">4,000</text>
+        <text class="a5aL" x="647" y="128" text-anchor="middle">500 new</text>
+        <text class="a5aB" x="647" y="146" text-anchor="middle">CAC 8.0</text>
+        <text class="a5aS" x="647" y="178" text-anchor="middle">"spend" is content cost</text>
+
+        <text class="a5aL" x="785" y="72" text-anchor="middle">PR</text>
+        <text class="a5aV" x="785" y="100" text-anchor="middle">3,000</text>
+        <text class="a5aL" x="785" y="128" text-anchor="middle">120 new</text>
+        <text class="a5aB" x="785" y="146" text-anchor="middle">CAC 25.0</text>
+
+        <text class="a5aA" x="44" y="238">BLENDED, ALL SIX</text>
+        <text class="a5aL" x="44" y="262">64,000 / 2,670 new</text>
+        <text class="a5aV" x="44" y="292">CAC 24.0</text>
+        <text class="a5aB" x="44" y="310">true of no single channel</text>
+
+        <text class="a5aS" x="434" y="250" text-anchor="middle">organic 8.0</text>
+        <text class="a5aS" x="655" y="250" text-anchor="middle">PR 25.0</text>
+        <text class="a5aS" x="798" y="250" text-anchor="middle">creators 36.0</text>
+        <text class="a5aS" x="525" y="268" text-anchor="middle">affiliate 15.0</text>
+        <text class="a5aS" x="720" y="268" text-anchor="middle">paid search, paid social 30.0</text>
+        <text class="a5aS" x="330" y="304" text-anchor="middle">0</text>
+        <text class="a5aS" x="850" y="304" text-anchor="middle">40</text>
+        <text class="a5aB" x="642" y="308" text-anchor="middle">blended 24.0</text>
+        <text class="a5aS" x="616" y="338" text-anchor="middle">the spread it hides: 8.0 to 36.0</text>
+
+        <text class="a5aN" x="30" y="362">New = first order ever, deduplicated across channels. Constructed Kettle &amp; Co figures.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the blended 24.0 sits in the middle of a spread from 8.0 to 36.0, and no channel actually costs 24.0</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>The two decisions inside every CAC<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>What goes on top.</strong> The narrowest numerator is media spend: what the ad platform invoiced. A fully loaded numerator adds agency and creator fees, tools, and the people who run the channel. Neither is wrong; they answer different questions. Media-only CAC tells the marketing lead what the auction charges her. Fully loaded CAC tells the finance partner what a customer really costs the business. Organic search shows why the choice matters: it has no media bill at all, so in the constructed table its "spend" is the 4,000 of content cost that produced the pages people found. Leave that out and organic CAC is zero, which flatters it into meaninglessness; put it in and organic CAC is 8.0.</p>
+        <p><strong>What counts underneath.</strong> A "new customer" should mean a first order ever, deduplicated: the same person reached by paid social on Monday and a creator on Wednesday is one new customer, not two. If each channel counts its own "new" from its own reporting, the six denominators add up to more people than actually arrived, and every CAC looks cheaper than it is. The company's own customer table, not the platforms, is where "first order ever" is decided.</p>
+        <p>So a CAC on a slide should never travel alone. Write it as "30.0 (media only, first-ever orders, deduplicated)" and the next person who compares it with a number from finance will know whether they are comparing like with like.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Why the blended figure keeps winning meetings<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Blended CAC is easy to compute, stable from quarter to quarter, and it fits on one slide. In the constructed Q3 table it is 64,000 over 2,670 new customers, 24.0. It is a fair number for one question: what did acquiring customers cost the business overall? It is the wrong number for every channel question, because it mixes a channel that costs 8.0 with one that costs 36.0. Worse, it moves when the mix moves even if no channel changes: shift money towards the expensive channels and blended CAC rises with no channel getting worse, the same mix effect Angles session 4 found in blended repeat. Report blended for the overall question, by channel for every allocation question, and say which one you are showing.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>Two CACs for the same quarter.</strong> Kettle &amp; Co's marketing lead and finance partner arrive at the quarterly review with different paid social CACs for the same three months. Neither has made a mistake: one divided media spend by first orders in the ad platform's own reporting, the other divided media plus agency fees by first-ever orders from the customer table. Forty minutes of the meeting go on reconciling them. The fix the data team proposes is a one-line definition printed under every CAC on every slide. Constructed example; the two-numerator problem is common wherever marketing and finance report the same cost.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-2">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers payback and margin</span>
+      <h2>Payback is counted in margin, month by month</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">A CAC on its own says what a customer cost, not whether she was worth it. The payback month answers that: the first month in which the cumulative gross margin from a customer covers what it cost to acquire her. Margin, not revenue, because a pound of revenue on tea still has to pay for the tea, the tin, the packing and the postage before it can pay back an ad. A channel that "pays back" on revenue can still be losing money on every customer it brings.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 390" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Six small hand-drawn charts, one per channel, each with months 0 to 6 along the bottom. Each shows a rising line of cumulative gross margin per customer starting at the first-order margin of 14 pounds, and a dashed horizontal line at the channel's CAC. Paid search: CAC 30.0, margin reaches 32.24 by month 6, pays back at month 6. Paid social, shaded saffron: CAC 30.0, margin reaches only 24.56, not paid back by month 6. Creators: CAC 36.0, margin 28.88, not paid back by month 6. Affiliate: CAC 15.0, pays back at month 1, margin 20.72. Organic search: CAC 8.0, pays back at month 0 on the first order, margin 33.68. PR: CAC 25.0, pays back at month 6, margin 26.96.">
+        <defs>
+          <filter id="a5bSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="19" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="a5bHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#2B22A8" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="a5bAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1A1830" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .a5bH { font: 800 12px Inter, sans-serif; fill: #1A1830; }
+          .a5bL { font: 600 12px Inter, sans-serif; fill: #1A1830; }
+          .a5bS { font: 400 11px Inter, sans-serif; fill: #5E5B78; }
+          .a5bB { font: 800 11px Inter, sans-serif; fill: #5C3C00; }
+          .a5bA { font: 700 11px Inter, sans-serif; fill: #2B22A8; letter-spacing: .05em; }
+          .a5bN { font: 400 12px Inter, sans-serif; fill: #5E5B78; }
+        </style>
+
+        <text class="a5bH" x="30" y="26">CUMULATIVE MARGIN PER CUSTOMER AGAINST CAC, MONTHS 0 TO 6</text>
+        <text class="a5bS" x="470" y="26">solid: margin · dashed: CAC · dot: payback month</text>
+
+        <g filter="url(#a5bSk)" fill="none" stroke="#1A1830" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <!-- panels -->
+          <rect x="30" y="44" width="260" height="150" rx="8" transform="rotate(-0.3 160 119)" fill="#FFFFFF"/>
+          <rect x="310" y="44" width="260" height="150" rx="8" transform="rotate(0.3 440 119)" fill="#FBF3E2" stroke="#8A5A00"/>
+          <rect x="590" y="44" width="260" height="150" rx="8" transform="rotate(-0.3 720 119)" fill="#FFFFFF"/>
+          <rect x="30" y="206" width="260" height="150" rx="8" transform="rotate(0.3 160 281)" fill="#FFFFFF"/>
+          <rect x="310" y="206" width="260" height="150" rx="8" transform="rotate(-0.3 440 281)" fill="#FFFFFF"/>
+          <rect x="590" y="206" width="260" height="150" rx="8" transform="rotate(0.3 720 281)" fill="#FFFFFF"/>
+          <!-- axes -->
+          <path d="M54 172 L266 172 M54 172 L54 94 M334 172 L546 172 M334 172 L334 94 M614 172 L826 172 M614 172 L614 94" stroke-width="1.6"/>
+          <path d="M54 334 L266 334 M54 334 L54 256 M334 334 L546 334 M334 334 L334 256 M614 334 L826 334 M614 334 L614 256" stroke-width="1.6"/>
+          <!-- CAC levels, dashed -->
+          <path d="M54 113.5 L266 113.5" stroke-dasharray="6 4"/>
+          <path d="M334 113.5 L546 113.5" stroke-dasharray="6 4"/>
+          <path d="M614 101.8 L826 101.8" stroke-dasharray="6 4"/>
+          <path d="M54 304.8 L266 304.8" stroke-dasharray="6 4"/>
+          <path d="M334 318.4 L546 318.4" stroke-dasharray="6 4"/>
+          <path d="M614 285.2 L826 285.2" stroke-dasharray="6 4"/>
+          <!-- cumulative margin lines -->
+          <path d="M54 144.7 L266 109.1" stroke="#2B22A8" stroke-width="2.6"/>
+          <path d="M334 144.7 L546 124.1" stroke="#8A5A00" stroke-width="2.6"/>
+          <path d="M614 144.7 L826 115.7" stroke="#2B22A8" stroke-width="2.6"/>
+          <path d="M54 306.7 L266 293.6" stroke="#2B22A8" stroke-width="2.6"/>
+          <path d="M334 306.7 L546 268.3" stroke="#2B22A8" stroke-width="2.6"/>
+          <path d="M614 306.7 L826 281.4" stroke="#2B22A8" stroke-width="2.6"/>
+          <!-- payback dots -->
+          <circle cx="266" cy="109.1" r="5" fill="#2B22A8" stroke="#2B22A8"/>
+          <circle cx="89.3" cy="304.5" r="5" fill="#2B22A8" stroke="#2B22A8"/>
+          <circle cx="334" cy="306.7" r="5" fill="#2B22A8" stroke="#2B22A8"/>
+          <circle cx="826" cy="281.4" r="5" fill="#2B22A8" stroke="#2B22A8"/>
+          <!-- doodle: a coin beside the heading -->
+          <circle cx="852" cy="22" r="9"/>
+          <path d="M849 18 L855 18 M849 26 L855 26"/>
+        </g>
+
+        <text class="a5bL" x="42" y="64">Paid search · CAC 30.0</text>
+        <text class="a5bS" x="42" y="80">pays back month 6 · 6m margin 32.24</text>
+        <text class="a5bL" x="322" y="64">Paid social · CAC 30.0</text>
+        <text class="a5bB" x="322" y="80">not paid back by month 6 · 6m 24.56</text>
+        <text class="a5bL" x="602" y="64">Creators · CAC 36.0</text>
+        <text class="a5bS" x="602" y="80">not paid back by month 6 · 6m 28.88</text>
+        <text class="a5bL" x="42" y="226">Affiliate · CAC 15.0</text>
+        <text class="a5bS" x="42" y="242">pays back month 1 · 6m margin 20.72</text>
+        <text class="a5bL" x="322" y="226">Organic search · CAC 8.0</text>
+        <text class="a5bS" x="322" y="242">pays back month 0 · 6m margin 33.68</text>
+        <text class="a5bL" x="602" y="226">PR · CAC 25.0</text>
+        <text class="a5bS" x="602" y="242">pays back month 6 · 6m margin 26.96</text>
+
+        <text class="a5bS" x="54" y="186">month 0</text>
+        <text class="a5bS" x="266" y="186" text-anchor="end">month 6</text>
+        <text class="a5bS" x="334" y="186">month 0</text>
+        <text class="a5bS" x="546" y="186" text-anchor="end">month 6</text>
+        <text class="a5bS" x="614" y="186">month 0</text>
+        <text class="a5bS" x="826" y="186" text-anchor="end">month 6</text>
+        <text class="a5bS" x="54" y="348">month 0</text>
+        <text class="a5bS" x="266" y="348" text-anchor="end">month 6</text>
+        <text class="a5bS" x="334" y="348">month 0</text>
+        <text class="a5bS" x="546" y="348" text-anchor="end">month 6</text>
+        <text class="a5bS" x="614" y="348">month 0</text>
+        <text class="a5bS" x="826" y="348" text-anchor="end">month 6</text>
+
+        <text class="a5bN" x="30" y="378">Constructed: first-order margin 14, plus 48 per repeater spread evenly over six months. Pounds.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - every line starts at the same first-order margin of 14; what separates the channels is how steeply repeat orders lift it, and where the CAC line sits</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Reading the six panels<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The constructed model is deliberately simple. Every new customer's first order earns 14 of gross margin. Each customer who orders again within six months adds 48 more over that period, spread evenly. So a channel's six-month margin per customer is 14 plus its repeat rate times 48: paid search, with 38 percent repeat, reaches 32.24; paid social, with 22 percent, reaches 24.56.</p>
+        <p><strong>Organic search</strong> pays back at month 0: its CAC of 8.0 is covered by the first order alone. <strong>Affiliate</strong> pays back at month 1, CAC 15.0 against a first-order margin of 14. <strong>Paid search</strong> and <strong>PR</strong> pay back at month 6, just inside the window. <strong>Paid social</strong> and <strong>creators</strong> do not pay back within six months at all: paid social is still 5.44 short of its CAC at month 6, creators 7.12 short.</p>
+        <p>Notice what this does to the part 1 picture. Paid search and paid social had the same CAC, 30.0. On payback they are on opposite sides of the line, and the whole difference is the repeat rate Angles session 4 drew as a cohort curve. Cost tells you half the story; margin over time tells you the other half.</p>
+        <p>"Not within 6" is not "never". With a longer window, more repeat orders could close the gap. Whether to judge channels on six months, twelve or a lifetime is a finance and marketing choice about how long the business can wait for its money; the data team's job is to show the answer at each window, not to pick one quietly.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Customer value is an input here, not a calculation<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The six-month margin per customer above is a crude customer value: one window, one average repeat rate, one margin. A proper customer lifetime value (CLV) models how many more orders each customer is likely to place and when, and it has its own methods, assumptions and failure modes. Computing it is taught in <a href="https://phoebefu6.github.io/learn-customer-retention-with-phoebe/courses/a6-clv-buy-till-you-die.html">Customer Retention, the CLV session ↗</a>.</p>
+        <p>For allocation work, treat CLV the way you treat a supplier's price: an input with a source and a date. Write down which model produced it, over what horizon, on margin or on revenue, and from which cohort. Then the payback table can use it, and anyone who disagrees with the CLV knows exactly which input to argue with, rather than arguing with the whole recommendation.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Why affiliate's quick payback points back to coupons<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Affiliate looks excellent on payback: month 1, the fastest of the paid channels. But its six-month repeat is 14 percent, the lowest of any channel, so its six-month margin per customer, 20.72, is the lowest too. It pays back quickly because it is cheap, not because the customers are valuable.</p>
+        <p>Angles session 3 drew the mechanism that produces exactly this pairing: coupon sites intercepting buyers who were already at checkout, collecting the last click and the commission for an order that was going to happen anyway. A cheap CAC with a weak repeat rate is the signature to check for. If many of affiliate's "new" customers were already on their way, its true CAC is higher than 15.0, because the denominator counts people the channel did not bring. The split of affiliate orders into new and returning customers, and what each did next, is the evidence; what to do with the coupon partners is the BD lead's call.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>The channel that paid back on revenue.</strong> A first draft of Kettle &amp; Co's payback table divided cumulative revenue per customer by CAC, and every channel paid back inside three months. The finance partner asked one question: "revenue or margin?" On margin, two channels, paid social and creators, did not pay back within six months at all. The draft was not wrong arithmetic; it answered a question nobody needed answered, because revenue does not pay for an ad until the tea and the postage are paid for. Constructed example; the revenue-for-margin swap is one of the most common errors in payback work.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-3">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · covers the next dollar</span>
+      <h2>The average customer is not the next customer</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">Every number so far is an average: total spend over total new customers. The marketing lead's question is about the margin: if she puts another 6,000 into paid social next quarter, what does that 6,000 buy? Channels have diminishing returns. The first pounds reach the people most likely to buy; each extra pound reaches people a little less likely, at a little more cost. So the next customer costs more than the average one, and a channel can look healthy on average while its next pound is already losing money.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 374" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A hand-drawn curve of new customers against paid social spend per quarter, rising steeply then flattening. A dashed straight line from zero to today's point, 24,000 spent and 800 new customers, shows the average CAC of 30.0. A short thick saffron segment from today's point to 30,000 spent and 920 new customers shows the next 6,000 buying 120 new customers, a marginal CAC of 50.0. A small box says whose call: data supplies the evidence, the marketing lead places the bet.">
+        <defs>
+          <filter id="a5cSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="37" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="a5cHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#2B22A8" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="a5cAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1A1830" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .a5cH { font: 800 12px Inter, sans-serif; fill: #1A1830; }
+          .a5cL { font: 600 12px Inter, sans-serif; fill: #1A1830; }
+          .a5cS { font: 400 11px Inter, sans-serif; fill: #5E5B78; }
+          .a5cB { font: 800 11px Inter, sans-serif; fill: #5C3C00; }
+          .a5cA { font: 700 11px Inter, sans-serif; fill: #2B22A8; letter-spacing: .05em; }
+          .a5cN { font: 400 12px Inter, sans-serif; fill: #5E5B78; }
+        </style>
+
+        <text class="a5cH" x="30" y="26">PAID SOCIAL: WHAT THE NEXT 6,000 BUYS</text>
+        <text class="a5cS" x="330" y="26">constructed response curve, Kettle &amp; Co</text>
+        <text class="a5cA" x="100" y="64">NEW CUSTOMERS</text>
+
+        <g filter="url(#a5cSk)" fill="none" stroke="#1A1830" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M90 300 L720 300" marker-end="url(#a5cAr)"/>
+          <path d="M90 300 L90 48" marker-end="url(#a5cAr)"/>
+          <!-- the response curve -->
+          <path d="M90 300 L123.9 279.8 L157.8 260.8 L191.7 243 L225.6 226.4 L259.4 210.7 L293.3 196.1 L327.2 182.3 L361.1 169.5 L395 157.4 L428.9 146.1 L462.8 135.5 L496.7 125.5 L530.6 116.2 L564.4 107.4 L598.3 99.2 L632.2 91.5 L666.1 84.3 L700 77.6" stroke="#2B22A8" stroke-width="2.5"/>
+          <!-- average: origin to today -->
+          <path d="M90 300 L496.7 125.5" stroke-dasharray="6 5"/>
+          <!-- marginal: today to +6,000 -->
+          <path d="M496.7 125.5 L598.3 99.2" stroke="#8A5A00" stroke-width="5"/>
+          <circle cx="496.7" cy="125.5" r="5" fill="#2B22A8" stroke="#2B22A8"/>
+          <circle cx="598.3" cy="99.2" r="5" fill="#8A5A00" stroke="#8A5A00"/>
+          <!-- whose call -->
+          <rect x="724" y="236" width="140" height="58" rx="6" transform="rotate(1.2 794 265)" fill="#F0EFFB"/>
+          <!-- doodle: a coin by the marginal note -->
+          <circle cx="592" cy="196" r="9"/>
+          <path d="M589 192 L595 192 M589 200 L595 200"/>
+        </g>
+
+        <text class="a5cL" x="510" y="152">today: 24,000 spent, 800 new</text>
+        <text class="a5cB" x="610" y="192">next 6,000 buys 120 new</text>
+        <text class="a5cB" x="610" y="208">marginal CAC 50.0</text>
+        <text class="a5cS" x="250" y="272">average CAC 30.0 = 24,000 / 800</text>
+
+        <text class="a5cA" x="736" y="256">WHOSE CALL</text>
+        <text class="a5cS" x="736" y="272">data: the evidence</text>
+        <text class="a5cS" x="736" y="286">lead: the bet</text>
+
+        <text class="a5cS" x="90" y="316" text-anchor="middle">0</text>
+        <text class="a5cS" x="293" y="316" text-anchor="middle">12,000</text>
+        <text class="a5cS" x="497" y="316" text-anchor="middle">24,000</text>
+        <text class="a5cS" x="700" y="316" text-anchor="middle">36,000</text>
+        <text class="a5cA" x="395" y="338" text-anchor="middle">PAID SOCIAL SPEND PER QUARTER, POUNDS</text>
+
+        <text class="a5cN" x="30" y="362">Two points constructed (24,000 for 800; 30,000 for 920). The shape between and beyond them is stylised.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the dashed slope is what the average says a customer costs; the saffron slope is what the next one costs</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Average CAC against marginal CAC<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>Average CAC</strong> is total spend over total new customers: for paid social in the constructed Q3, 24,000 over 800, 30.0. <strong>Marginal CAC</strong> is the extra spend over the extra customers it brings. In the constructed response curve, the next 6,000 on paid social buys 120 new customers: 6,000 over 120, 50.0. The next customer costs two thirds more than the average one.</p>
+        <p>Put that next to Part 2. At an average CAC of 30.0, paid social was already 5.44 short of paying back by month 6. If the extra 120 customers behaved like the current ones, which is itself an assumption, each would bring about 24.56 of six-month margin against a cost of 50.0. The marketing lead's plan to grow paid social is not obviously wrong: it may be buying reach for the slow brand clock of Angles session 1, or the longer window may close the gap. But "it has the same CAC as paid search" is no longer a reason.</p>
+        <p>Where does a response curve come from? In practice, from the company's own history of spend changes, from deliberate spend tests, or from a marketing mix model. Each is an estimate with uncertainty, and a curve fitted to a narrow range of past spend says little about spend far outside it. Mix models and spend tests at depth are taught in <a href="https://phoebefu6.github.io/learn-marketing-attribution-with-phoebe/">Marketing Attribution ↗</a>.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Data informs the bet; the business places it<span class="mini">1 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>It is tempting, with a table this clear, to write "move 6,000 from paid social to organic search content" at the bottom and send it. Resist it. The marketing lead knows things the table does not: a product launch that needs reach next quarter, a creator contract already signed, a brand campaign whose payoff will not show in six months. She will also live with the outcome, in her targets and in her next budget round. Whoever lives with the outcome owns the decision. The data team's deliverable is the evidence, laid out as options with their numbers and their uncertainty, by a named date. The choice stays with her.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Segments beyond channel<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Channel is only one way to cut "who deserves the next dollar". The same arithmetic, CAC with its base, margin-based payback, average against marginal, applies to any segment that costs something to acquire and earns something afterwards. Two that matter at Kettle &amp; Co are worth working through on your own data:</p>
+        <p><strong>Business accounts against consumers.</strong> Office-tea accounts, the BD lead's business customers, are acquired through trials, samples and sales time rather than ads, and they reorder on a different rhythm. Their CAC numerator is mostly people's time, which is easy to leave out; their repeat pattern looks nothing like a consumer's. Mixing them into consumer CAC distorts both. The BD lead's ask about office-tea trials not converting is ask 24 on the Partnership session 2 triage desk.</p>
+        <p><strong>Subscribers against one-off buyers.</strong> A subscriber's repeat orders are close to scheduled; a one-off buyer's are not. A channel that brings a higher share of subscribers will look better on six-month margin for a structural reason, and the honest comparison splits the channel's customers by what they signed up for.</p>
+        <p>No constructed numbers are given for these cuts on purpose. Build them from your own customer table and see whether the ranking of your channels survives the split.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>The budget that doubled on an average.</strong> At a quarterly review, Kettle &amp; Co's marketing lead proposes growing paid social because its CAC of 30.0 matches paid search. The data team brings one more slide: what the next 6,000 is expected to buy on the constructed response curve, 120 customers at a marginal CAC of 50.0, with a note on how uncertain that curve is. The lead keeps part of the increase for a launch that needs reach, and puts the rest into a spend test so the next quarter's curve rests on evidence rather than one past range. Her decision, made with better numbers. Constructed example; the average-for-marginal swap is how many budgets grow past the point of return.</p>
+    </div>
+  </section>
+
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Build-along</span>
+      <h2>A payback table, and a recommendation that stays a recommendation</h2>
+      <span class="tag demo">★ 22 min · everyone works it through</span>
+    </div>
+    <p class="lede">No code tonight. You will build Kettle &amp; Co's Q3 payback table by hand from the constructed figures, one column at a time, then write the evidence note the marketing lead takes into her budget decision. This is ask 23 on the Partnership session 2 triage desk, "CAC and payback by channel": owned by data, with marketing and finance consulted. Work the first two steps together, then the rest alone. Do it again on your own company's data afterwards; your numbers will differ.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 346" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A hand-drawn payback table with five columns: channel, CAC, six-month margin per customer, margin over CAC, payback month. Rows sorted by margin over CAC: organic search 8.0, 33.68, 4.21, month 0; affiliate 15.0, 20.72, 1.38, month 1; PR 25.0, 26.96, 1.08, month 6; paid search 30.0, 32.24, 1.07, month 6; paid social, shaded saffron, 30.0, 24.56, 0.82, not within 6; creators 36.0, 28.88, 0.80, not within 6. A last row shows paid social's next 6,000 at a marginal CAC of 50.0. Beside the table, a note card to the marketing lead lists options, numbers, uncertainty and whose decision it is.">
+        <defs>
+          <filter id="a5dSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="53" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="a5dHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#2B22A8" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="a5dAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1A1830" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .a5dH { font: 800 12px Inter, sans-serif; fill: #1A1830; }
+          .a5dL { font: 600 12px Inter, sans-serif; fill: #1A1830; }
+          .a5dS { font: 400 11px Inter, sans-serif; fill: #5E5B78; }
+          .a5dB { font: 800 11px Inter, sans-serif; fill: #5C3C00; }
+          .a5dA { font: 700 11px Inter, sans-serif; fill: #2B22A8; letter-spacing: .05em; }
+          .a5dN { font: 400 12px Inter, sans-serif; fill: #5E5B78; }
+        </style>
+
+        <text class="a5dH" x="30" y="26">KETTLE &amp; CO Q3 PAYBACK TABLE, BY HAND</text>
+        <text class="a5dS" x="330" y="26">constructed, pounds, sorted by margin / CAC</text>
+
+        <text class="a5dA" x="44" y="62">CHANNEL</text>
+        <text class="a5dA" x="230" y="62">CAC</text>
+        <text class="a5dA" x="320" y="62">6M MARGIN</text>
+        <text class="a5dA" x="430" y="62">MARGIN / CAC</text>
+        <text class="a5dA" x="546" y="62">PAYBACK</text>
+
+        <g filter="url(#a5dSk)" fill="none" stroke="#1A1830" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="30" y="72" width="610" height="28" rx="4" transform="rotate(0.2 335 86)" fill="#FFFFFF"/>
+          <rect x="30" y="104" width="610" height="28" rx="4" transform="rotate(-0.2 335 118)" fill="#FFFFFF"/>
+          <rect x="30" y="136" width="610" height="28" rx="4" transform="rotate(0.2 335 150)" fill="#FFFFFF"/>
+          <rect x="30" y="168" width="610" height="28" rx="4" transform="rotate(-0.2 335 182)" fill="#FFFFFF"/>
+          <rect x="30" y="200" width="610" height="28" rx="4" transform="rotate(0.2 335 214)" fill="#FBF3E2" stroke="#8A5A00"/>
+          <rect x="30" y="232" width="610" height="28" rx="4" transform="rotate(-0.2 335 246)" fill="#FFFFFF"/>
+          <rect x="30" y="272" width="610" height="28" rx="4" transform="rotate(0.2 335 286)" fill="url(#a5dHc)" stroke-dasharray="6 4"/>
+          <!-- the evidence note card -->
+          <rect x="668" y="72" width="190" height="228" rx="8" transform="rotate(1.2 763 186)" fill="#F0EFFB"/>
+          <!-- doodle: a paperclip on the note -->
+          <path d="M832 64 L832 92 C832 100 844 100 844 92 L844 68"/>
+        </g>
+
+        <text class="a5dL" x="44" y="91">Organic search *</text><text class="a5dL" x="230" y="91">8.0</text><text class="a5dL" x="320" y="91">33.68</text><text class="a5dL" x="430" y="91">4.21</text><text class="a5dL" x="546" y="91">month 0</text>
+        <text class="a5dL" x="44" y="123">Affiliate</text><text class="a5dL" x="230" y="123">15.0</text><text class="a5dL" x="320" y="123">20.72</text><text class="a5dL" x="430" y="123">1.38</text><text class="a5dL" x="546" y="123">month 1</text>
+        <text class="a5dL" x="44" y="155">PR</text><text class="a5dL" x="230" y="155">25.0</text><text class="a5dL" x="320" y="155">26.96</text><text class="a5dL" x="430" y="155">1.08</text><text class="a5dL" x="546" y="155">month 6</text>
+        <text class="a5dL" x="44" y="187">Paid search</text><text class="a5dL" x="230" y="187">30.0</text><text class="a5dL" x="320" y="187">32.24</text><text class="a5dL" x="430" y="187">1.07</text><text class="a5dL" x="546" y="187">month 6</text>
+        <text class="a5dB" x="44" y="219">Paid social</text><text class="a5dB" x="230" y="219">30.0</text><text class="a5dB" x="320" y="219">24.56</text><text class="a5dB" x="430" y="219">0.82</text><text class="a5dB" x="546" y="219">not in 6</text>
+        <text class="a5dL" x="44" y="251">Creators</text><text class="a5dL" x="230" y="251">36.0</text><text class="a5dL" x="320" y="251">28.88</text><text class="a5dL" x="430" y="251">0.80</text><text class="a5dL" x="546" y="251">not in 6</text>
+        <text class="a5dB" x="44" y="291">Paid social, next 6,000</text><text class="a5dB" x="230" y="291">50.0</text><text class="a5dB" x="320" y="291">marginal, not average</text>
+
+        <text class="a5dA" x="682" y="98">EVIDENCE NOTE</text>
+        <text class="a5dS" x="682" y="118">to: marketing lead</text>
+        <text class="a5dL" x="682" y="146">1 options</text>
+        <text class="a5dS" x="682" y="162">hold, test, or grow</text>
+        <text class="a5dL" x="682" y="188">2 numbers</text>
+        <text class="a5dS" x="682" y="204">average 30, next 50</text>
+        <text class="a5dL" x="682" y="230">3 uncertainty</text>
+        <text class="a5dS" x="682" y="246">the curve is an estimate</text>
+        <text class="a5dL" x="682" y="272">4 decision</text>
+        <text class="a5dB" x="682" y="288">hers, by the date</text>
+
+        <text class="a5dN" x="30" y="334">* Organic search "spend" is content cost, 4,000. Constructed Kettle &amp; Co Q3 2026; your numbers will differ.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the table ranks the channels; the note card is where the ranking becomes options, and the decision stays with its owner</figcaption>
+    </figure>
+
+    <div class="steps">
+      <div class="step">
+        <p><strong>Step 1 · CAC per channel, with its numerator written next to it.</strong> Divide spend by new customers for all six channels. Then write, beside each, what the spend contains. For organic search that means saying out loud that "spend" is content cost. Also state the denominator rule once for the whole table.</p>
+        <div class="prompt-box good"><span class="label">★ Step 1 · CAC with its base</span>channel          spend    new   CAC    numerator contains
+paid search      18,000   600   30.0   ________________
+paid social      24,000   800   30.0   ________________
+creators          9,000   250   36.0   ________________
+affiliate         6,000   400   15.0   ________________
+organic search    4,000   500    8.0   content cost (no media bill)
+PR                3,000   120   25.0   ________________
+blended          64,000  2,670  24.0   (overall only, never for allocation)
+new = __________________________________   (hint: first order ever, deduplicated)
+constructed figures; on your own data, your numbers will differ</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 2 · Six-month margin per customer.</strong> First-order margin 14, plus the six-month repeat rate times 48. Write the formula once, then fill the column. Check one against the table before trusting the rest.</p>
+        <div class="prompt-box good"><span class="label">★ Step 2 · margin, not revenue</span>6m margin per customer = 14 + (6m repeat rate x 48)
+paid search      14 + 0.38 x 48 = 32.24
+paid social      14 + 0.22 x 48 = ______
+creators         14 + 0.31 x 48 = ______
+affiliate        14 + 0.14 x 48 = ______
+organic search   14 + 0.41 x 48 = ______
+PR               14 + 0.27 x 48 = ______
+check: does any row use revenue?   [ ] no</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 3 · Margin over CAC.</strong> Divide each six-month margin by its CAC and sort the table by the result. Above 1.00 the channel's customers have covered their cost within six months; below 1.00 they have not yet.</p>
+        <div class="prompt-box good"><span class="label">★ Step 3 · the ratio</span>organic search   33.68 / 8.0  = 4.21
+affiliate        20.72 / 15.0 = 1.38
+PR               26.96 / 25.0 = 1.08
+paid search      32.24 / 30.0 = 1.07
+paid social      24.56 / 30.0 = 0.82
+creators         28.88 / 36.0 = 0.80
+which two sit below 1.00? ______   which looks cheap but repeats least? ______</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 4 · Payback month.</strong> For each channel, find the first month in which cumulative margin (14 at month 0, then the repeat margin added evenly month by month) reaches the CAC. Write "not within 6" where it never does inside the window, rather than extrapolating.</p>
+        <div class="prompt-box good"><span class="label">★ Step 4 · the payback column</span>organic search   month 0   (first order alone covers 8.0)
+affiliate        month 1
+PR               month ___
+paid search      month ___
+paid social      not within 6   short by ______ at month 6
+creators         not within 6   short by ______ at month 6
+window used: 6 months   who chose it? ________   would 12 change a row? ________</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 5 · The marginal question.</strong> The marketing lead wants to grow paid social. The table so far is all averages. Add the one row that answers her actual question: what the next 6,000 buys, on the constructed response curve, and how sure anyone is of that curve.</p>
+        <div class="prompt-box good"><span class="label">★ Step 5 · average against next</span>paid social average CAC    24,000 / 800 = 30.0
+next 6,000 buys            120 new customers (constructed response curve)
+paid social marginal CAC   6,000 / 120 = 50.0
+if they behave like today's customers: 6m margin ______ against cost 50.0
+where the curve comes from: ______________________   how sure: ______________</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 6 · The evidence note.</strong> Write the note the marketing lead takes into her decision. Options with their numbers, the uncertainty in plain words, and one line that leaves the decision where it belongs. No "we recommend moving the budget"; that sentence is hers to write.</p>
+        <div class="prompt-box good"><span class="label">★ Step 6 · the note</span>To: marketing lead          From: data team          By: ____________
+Question: where should next quarter's extra 6,000 go?
+Options:
+  A  hold paid social at 24,000          evidence: ______________________
+  B  grow paid social to 30,000          evidence: marginal CAC 50.0, ______
+  C  test a smaller increase first       evidence: ______________________
+Uncertainty: the response curve is an estimate from ______; six months may be too short for ______
+Not in this note: brand effects, launch plans, contracts already signed (yours to weigh)
+Decision: yours. Data informs the bet; the business places it.</div>
+      </div>
+    </div>
+
+    <div class="callout tip">
+      <p><strong>Keep the table and the note together.</strong> A payback table on its own invites someone else to draw the conclusion. Paired with an evidence note, it arrives as options with numbers, which is what a decision owner can use. Partnership session 4 covers what to say when the decision goes a way the numbers did not favour.</p>
+    </div>
+  </section>
+
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Before Angles session 6</h2>
+      <span class="tag exercise">30 min</span>
+    </div>
+    <ol>
+      <li><strong>Find your company's CAC on two slides</strong> from different teams, and write down each one's numerator and definition of "new". If they differ, write the one-line definition you would print under both.</li>
+      <li><strong>Build a payback table for three of your channels</strong> on margin, at a six-month and a twelve-month window, and note any row whose verdict changes with the window.</li>
+      <li><strong>Find one channel where a spend change happened</strong> in the last year and estimate, roughly and with its uncertainty, what the extra spend bought: your first marginal CAC.</li>
+      <li><strong>Split one channel's new customers</strong> into a segment pair that matters at your company (business against consumer, subscriber against one-off) and see whether its payback verdict survives the split.</li>
+    </ol>
+  </section>
+
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions</h2>
+    </div>
+    <p>Clear all three and Angles session 5 gets stamped in your passport.</p>
+
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · Kettle &amp; Co's blended CAC is 24.0 (constructed). Why is it the wrong number for deciding which channel gets more money?</p>
+      <button class="qopt" type="button">A · Because blended figures are always calculated incorrectly</button>
+      <button class="qopt" type="button">B · Because it averages channels that cost from 8.0 to 36.0 into a figure true of none of them, and it moves with the mix even when no channel changes</button>
+      <button class="qopt" type="button">C · Because it leaves out organic search</button>
+      <button class="qopt" type="button">D · Because CAC should only ever be reported by the ad platforms</button>
+      <p class="qwhy">Blended CAC answers the overall question, what acquisition cost the business. Allocation is a channel question, and needs each channel's CAC with its numerator and its definition of "new".</p>
+    </div>
+
+    <div class="quiz-q" data-answer="3">
+      <p class="qtext">2 · Why is payback computed on gross margin rather than revenue?</p>
+      <button class="qopt" type="button">A · Because revenue figures are confidential to finance</button>
+      <button class="qopt" type="button">B · Because margin is always larger than revenue</button>
+      <button class="qopt" type="button">C · Because revenue makes every channel look slower to pay back</button>
+      <button class="qopt" type="button">D · Because a pound of revenue still has to pay for the product, packing and postage before it can repay the cost of acquiring the customer; on revenue, channels that lose money can look as if they pay back</button>
+      <p class="qwhy">Margin is what is left to repay the acquisition cost. In the constructed case, paid social and creators do not pay back within six months on margin, which a revenue view hides.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">3 · Paid social's average CAC is 30.0, but the next 6,000 buys 120 customers in the constructed response curve. What should the data team put in front of the marketing lead?</p>
+      <button class="qopt" type="button">A · The marginal CAC of 50.0 next to the average of 30.0, with where the curve comes from and how uncertain it is, as evidence for a decision that stays hers</button>
+      <button class="qopt" type="button">B · The average CAC of 30.0, since it matches paid search</button>
+      <button class="qopt" type="button">C · An instruction to move the 6,000 to organic search</button>
+      <button class="qopt" type="button">D · Nothing until the curve is known exactly</button>
+      <p class="qwhy">The next customer costs more than the average one, and the curve is an estimate. Data informs the bet; the business places it, because the marketing lead lives with the outcome and knows things the table does not.</p>
+    </div>
+
+    <p class="quiz-score"></p>
+  </section>
+
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Sources covered</span>
+      <h2>What this session teaches, and where it came from</h2>
+    </div>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Kettle &amp; Co Q3 2026 acquisition by channel: spend, new customers, CAC, 6-month repeat, margin, payback, margin over CAC; blended 24.0; marginal CAC 50.0</span><span class="note">Constructed; every figure from one generating script, labelled constructed on the page</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">CAC with its numerator and denominator stated; payback month on cumulative gross margin; average against marginal cost</span><span class="note">Standard finance and marketing practice taught as practice, not as a sourced claim; no industry benchmark is quoted because none was verified</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Customer lifetime value as an input to allocation</span><span class="note">Used, not computed; computing CLV is taught in Customer Retention, the CLV session</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Response curves and how they are estimated</span><span class="note">Named only; the constructed curve is stylised; mix models and spend tests are taught in Marketing Attribution</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Segments beyond channel: business accounts against consumers, subscribers against one-off buyers</span><span class="note">Self-study on your own data; no constructed numbers given</span></div>
+    </div>
+    <p class="mono" style="margin-top:14px">Every fact on this page, and its verification tier, is recorded in the course's source map.</p>
+  </section>
+
+  <section class="cheat" id="cheatsheet">
+    <h3>Angles session 5 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>A CAC travels with its base</b><span>Say what is on top (media only or fully loaded) and what counts as new (first order ever, deduplicated).</span></div>
+      <div class="cheat-item"><b>Blended is for one question</b><span>Overall cost of acquisition. Never for allocation: 24.0 can hide 8.0 to 36.0.</span></div>
+      <div class="cheat-item"><b>Payback on margin</b><span>First month cumulative gross margin covers CAC. Revenue flatters every channel.</span></div>
+      <div class="cheat-item"><b>CLV is an input</b><span>Borrow it with its model, horizon and date. Compute it somewhere it can be argued with.</span></div>
+      <div class="cheat-item"><b>The next pound costs more</b><span>Marginal CAC, not average, answers "should we spend more". Show the curve's uncertainty.</span></div>
+      <div class="cheat-item"><b>Options, not orders</b><span>Hand over options, numbers and uncertainty by a date. Data informs the bet; the business places it.</span></div>
+    </div>
+  </section>
+
+  <div class="callout next">
+    <span class="nx-pill">Next session</span>
+    <p>You can say what a customer cost, when she pays back and what the next one will cost. Angles session 6 asks whether the marketing caused the customer at all: test against control groups, holdouts, how to read a result that cannot be told from zero, and brand tracker waves read with their intervals.</p>
+  </div>
+
+  <footer class="pagefoot">
+    <span>Angles session 5 of 6 · learn-marketing-analytics-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="a4-acquisition-cohorts-by-channel.html">← Prev: Acquisition cohorts by channel</a> &nbsp;·&nbsp; <a href="a6-campaign-lift-and-brand-health.html">Next: Campaign lift and brand health →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

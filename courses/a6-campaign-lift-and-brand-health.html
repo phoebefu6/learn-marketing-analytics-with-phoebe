@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Angles session 6 of 6. Campaign lift and brand health: test against control and the holdout that gets nothing, why it beats before-and-after and platform-reported ROAS, how to report a result whose interval crosses zero, and how to read brand tracker waves without mistaking noise for news.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="Campaign lift and brand health - learn marketing analytics with phoebe">
+<meta property="og:description" content="Angles session 6 of 6. Holdouts, the honest no-effect read, and tracker waves with their intervals.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-marketing-analytics-with-phoebe/courses/a6-campaign-lift-and-brand-health.html">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-marketing-analytics-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Campaign lift and brand health - learn marketing analytics with phoebe">
+<meta name="twitter:description" content="Angles session 6 of 6. Holdouts, the honest no-effect read, and tracker waves with intervals.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-marketing-analytics-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Angles session 6 · Campaign lift and brand health - learn marketing analytics with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=3">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-marketing-analytics-with-phoebe</a> / Angles session 6 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn Marketing Analytics with Phoebe · Angles session 6 of 6</div>
+    <h1>Campaign lift and <span class="accent">brand health</span></h1>
+    <p class="sub">"Did the campaign work?" is the question every marketing team asks and almost no dashboard can answer, because a dashboard shows what happened, not what would have happened anyway. Tonight is the one tool that answers it directly: split the customers at random, give one group nothing, and the difference is the lift. Then the harder skill, reading a result that comes back too small to tell from zero without calling it a win, a loss or a secret. And last, the slow clock: brand tracker waves, where a three-point move between two surveys is usually the survey, not the brand.</p>
+    <div class="chip-row">
+      <span class="chip level">🟠 Angles</span>
+      <span class="chip audience">Data analysts and data scientists who serve marketing, brand and BD</span>
+      <span class="chip audience">No code</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:4">3-18 · Holdouts, no-effect reads, tracker waves</span>
+      <span class="a3" style="flex:5">18-40 · Build-along: a lift readout</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where we start</h2>
+    </div>
+    <p class="lede">Five sessions have read marketing from the outside: the funnel and the two clocks, every channel in four beats, cohorts by channel, and who deserves the next pound. All of that describes what happened. This last Angles session asks what the marketing caused. The running company is still Kettle &amp; Co, the constructed direct-to-consumer tea brand, and every number about it tonight is constructed and labelled so. The marketing lead still owns every decision these numbers feed, because she is the one who lives with the outcome; the data team's job is to make sure the number she decides on is one she can trust.</p>
+
+    <div class="legend">
+      <span class="pill">🎫 Clear all three quiz questions to stamp your passport</span>
+      <span class="pill">Live = presented in the 45 minutes</span>
+      <span class="pill">Self-study = the full depth, after class</span>
+      <span class="pill">★ Build-along = everyone works it through</span>
+    </div>
+
+    <div class="callout win">
+      <p><strong>★ What you walk out with tonight.</strong> A picture of a holdout you can draw on a whiteboard in thirty seconds, the reason a platform's own ROAS is not evidence of lift, a sentence for reporting a result whose interval crosses zero, the habit of putting an interval on every tracker wave, and a five-line readout card you can reuse for every lift test you will ever read.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-1">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers test vs control and holdouts</span>
+      <h2>Give one group nothing, and measure the gap</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">A holdout is the simplest experiment in marketing. Take the customer list, split it at random, send the campaign to one side and nothing to the other, then compare the outcome. Because the split was random, the two groups are alike in every way that matters except the campaign, so the gap between them is what the campaign caused. Everything else a marketing team uses to judge a campaign, the before-and-after chart, the platform's attribution report, the "orders from people who clicked", is an estimate of that gap with something mixed in.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 332" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A hand-drawn customer list of 20,000 is split at random. 18,000 customers, 90 percent, are treated and get the emails; 2,000, 10 percent, are held out and get nothing. The treated group places 0.212 orders per customer and the held-out group 0.205. The difference between them, plus 0.007 orders per customer, is the lift. Constructed Kettle and Co figures.">
+        <defs>
+          <filter id="a6aSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="61" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="a6aHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#2B22A8" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="a6aAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1A1830" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .a6aH { font: 800 12px Inter, sans-serif; fill: #1A1830; }
+          .a6aL { font: 600 12px Inter, sans-serif; fill: #1A1830; }
+          .a6aS { font: 400 11px Inter, sans-serif; fill: #5E5B78; }
+          .a6aB { font: 800 11px Inter, sans-serif; fill: #5C3C00; }
+          .a6aV { font: 800 18px Inter, sans-serif; fill: #1B1470; }
+          .a6aW { font: 800 12px Inter, sans-serif; fill: #FFFFFF; }
+          .a6aA { font: 700 11px Inter, sans-serif; fill: #2B22A8; letter-spacing: .05em; }
+          .a6aN { font: 400 12px Inter, sans-serif; fill: #5E5B78; }
+        </style>
+
+        <text class="a6aH" x="30" y="26">A HOLDOUT: SPLIT AT RANDOM, TREAT ONE SIDE, COMPARE</text>
+        <text class="a6aS" x="500" y="26">Kettle &amp; Co email test, four weeks, constructed</text>
+
+        <g filter="url(#a6aSk)" fill="none" stroke="#1A1830" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <!-- the customer list -->
+          <rect x="40" y="66" width="170" height="190" rx="6" transform="rotate(-0.6 125 161)" fill="url(#a6aHc)"/>
+          <!-- random split arrows -->
+          <path d="M214 110 L322 96" marker-end="url(#a6aAr)"/>
+          <path d="M214 214 L322 224" marker-end="url(#a6aAr)"/>
+          <!-- doodle: a die, the random split -->
+          <rect x="230" y="148" width="28" height="28" rx="4" transform="rotate(8 244 162)" fill="#FFFFFF"/>
+          <circle cx="238" cy="156" r="1.6"/>
+          <circle cx="244" cy="162" r="1.6"/>
+          <circle cx="250" cy="168" r="1.6"/>
+          <!-- the two groups -->
+          <rect x="330" y="60" width="230" height="70" rx="6" transform="rotate(0.5 445 95)" fill="#F0EFFB"/>
+          <rect x="330" y="190" width="230" height="70" rx="6" transform="rotate(-0.5 445 225)" fill="#FFFFFF"/>
+          <path d="M564 95 L612 95" marker-end="url(#a6aAr)"/>
+          <path d="M564 225 L612 225" marker-end="url(#a6aAr)"/>
+          <!-- the outcomes -->
+          <rect x="620" y="66" width="150" height="58" rx="6" transform="rotate(-0.6 695 95)" fill="#F0EFFB"/>
+          <rect x="620" y="196" width="150" height="58" rx="6" transform="rotate(0.6 695 225)" fill="#FFFFFF"/>
+          <!-- the difference: the thing the figure is about -->
+          <rect x="620" y="136" width="230" height="48" rx="6" transform="rotate(-0.4 735 160)" fill="#8A5A00" stroke="#8A5A00"/>
+        </g>
+
+        <text class="a6aL" x="40" y="280">customer list, 20,000</text>
+        <text class="a6aS" x="40" y="296">split at random, before any send</text>
+
+        <text class="a6aA" x="346" y="88">TREATED, 90%</text>
+        <text class="a6aL" x="346" y="110">18,000 get the emails</text>
+        <text class="a6aA" x="346" y="218">HELD OUT, 10%</text>
+        <text class="a6aL" x="346" y="240">2,000 get nothing</text>
+
+        <text class="a6aV" x="636" y="96">0.212</text>
+        <text class="a6aS" x="636" y="114">orders per customer</text>
+        <text class="a6aV" x="636" y="226">0.205</text>
+        <text class="a6aS" x="636" y="244">orders per customer</text>
+
+        <text class="a6aW" x="636" y="165">lift: +0.007 per customer</text>
+
+        <text class="a6aN" x="30" y="320">Random split: the only systematic difference is the emails, so the gap is what they caused. Constructed.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the saffron box is the only number the test exists to produce; everything else is how you got there</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>Why a holdout beats before-and-after and platform attribution<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>Before-and-after</strong> compares this month with last month. Everything that changed between them, the season, a competitor's price cut, a newspaper mention, the weather for hot drinks, lands in the difference and gets credited to the campaign. A holdout runs both groups through the same weeks, so all of that hits both sides equally and cancels out.</p>
+        <p><strong>Platform attribution</strong> counts conversions from people who saw or clicked an ad, inside a window and under a model the platform chose. Many of those people would have bought anyway: loyal subscribers, people already searching for the brand. Attribution has no way to subtract them, because it never sees a comparable group that was not shown the ad. A holdout is that group.</p>
+        <p>The holdout's honesty has a price: the held-out customers really do get nothing for the length of the test, and if the campaign works, some sales are given up to learn that it works. That trade is a marketing decision, made by the marketing lead with the data team naming the size of the group and the length of the test. Designing the size properly, the power and sample-size side, is taught in <a href="https://phoebefu6.github.io/learn-experimentation-with-phoebe/">Experimentation ↗</a>.</p>
+        <p>For the wider discipline, the standard reference is Ron Kohavi, Diane Tang, Ya Xu, <em>Trustworthy Online Controlled Experiments</em> (Cambridge University Press, 2020). Its publisher's description sums up the whole field in one line: "getting numbers you can trust is hard". Only that description was read for this page, not the chapters, so no specific holdout claim here is attributed to the book.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Platform ROAS grades its own homework<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>A Kettle &amp; Co Meta campaign (constructed) reports £98,400 of revenue on £24,000 of spend: a platform ROAS of 4.1. The marketing lead's question is whether to double the budget. A conversion lift test on the same campaign finds that 38 percent of the reported conversions were incremental, meaning they would not have happened without the ads. Incremental revenue is then £37,392, and incremental ROAS is 1.56.</p>
+        <p>Both numbers are "true" in their own terms. 4.1 is what the platform credited under its own window and model; 1.56 is what the ads caused. Only the second answers "should I spend more?", and it is a very different answer: a channel returning £1.56 per pound before margin may not be paying for itself at all. Whether it does is a finance and margin question (Angles session 5), and whether to double is still the marketing lead's call. What the data team owes her is the right number to make it on.</p>
+        <p>One more honesty note: the 38 percent is itself an estimate from a test, with its own uncertainty. Ask for the interval on the lift figure, not just the point.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The platforms run holdouts too<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Both big ad platforms offer their own lift tests. As of October 2026, read at source on 10 October 2026; check each platform's current help page before you plan one, because these pages change.</p>
+        <p><strong>Meta Conversion Lift</strong> (Meta Business Help Center, "About Conversion Lift"). It splits people into randomised test and control groups, the control being the people who don't see your ads, and uses an intent-to-treat approach: people are counted in the group they were assigned to, whether or not an ad actually reached them. Lift is the difference in conversions caused by the presence of the ads, and Meta says the lift figure is estimated. Its eligibility guide is around USD 5,000 of spend and 500 conversions, and the test comes at no additional cost.</p>
+        <p><strong>Google Ads Conversion Lift</strong> (Google Ads Help, "About Conversion Lift"). The control group is again people who don't see your ads, split either user-based or geography-based. User-based tests rely mostly on opt-in traffic, and the feature is not available for all accounts.</p>
+        <p>A platform's lift test is far better evidence than the same platform's attribution report, because it has a real control group. It is still run, analysed and reported by the seller of the ads. A data team should read its method notes, ask for the interval, and where the decision is big, compare it with a holdout the company controls (an email or CRM holdout, or a geography test designed with the Attribution team).</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>The retargeting campaign that took credit for loyal customers.</strong> Kettle &amp; Co's retargeting ads showed the highest ROAS of any campaign, because they were shown to people who had just been on the site, most of whom were subscribers topping up. A holdout of one in ten site visitors showed the held-out group ordering at almost the same rate. The ads had been standing next to sales, not causing them. Constructed example; the pattern is common wherever ads are aimed at people already close to buying.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-2">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers reading a no-effect result honestly</span>
+      <h2>When the interval crosses zero</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">Kettle &amp; Co's four-week email holdout (constructed) came back with the treated group at 0.212 orders per customer and the held-out group at 0.205. The difference is +0.007 orders per customer, 3.4 percent relative. The 95 percent confidence interval, using a Poisson approximation for the order counts, runs from -0.014 to +0.028. The interval includes zero, and it also includes effects four times the point estimate. That is the whole finding, and it has to be reported as exactly that.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 284" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A hand-drawn number line of the difference in orders per customer, treated minus held out, from minus 0.02 to plus 0.03. A dashed vertical line marks zero, no effect. A saffron bar shows the 95 percent interval from minus 0.014 to plus 0.028, with the point estimate of plus 0.007 marked as a dot. The bar crosses zero. Constructed Kettle and Co figures.">
+        <defs>
+          <filter id="a6bSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="67" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="a6bHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#2B22A8" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="a6bAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1A1830" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .a6bH { font: 800 12px Inter, sans-serif; fill: #1A1830; }
+          .a6bL { font: 600 12px Inter, sans-serif; fill: #1A1830; }
+          .a6bS { font: 400 11px Inter, sans-serif; fill: #5E5B78; }
+          .a6bB { font: 800 11px Inter, sans-serif; fill: #5C3C00; }
+          .a6bA { font: 700 11px Inter, sans-serif; fill: #2B22A8; letter-spacing: .05em; }
+          .a6bN { font: 400 12px Inter, sans-serif; fill: #5E5B78; }
+        </style>
+
+        <text class="a6bH" x="30" y="26">THE EMAIL HOLDOUT ON A NUMBER LINE</text>
+        <text class="a6bS" x="330" y="26">95 percent interval, Poisson approximation, constructed</text>
+
+        <g filter="url(#a6bSk)" fill="none" stroke="#1A1830" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <!-- the axis -->
+          <path d="M80 190 L824 190" marker-end="url(#a6bAr)"/>
+          <path d="M100 186 L100 194 M240 186 L240 194 M380 186 L380 194 M520 186 L520 194 M660 186 L660 194 M800 186 L800 194"/>
+          <!-- zero: no effect -->
+          <path d="M380 86 L380 182" stroke-dasharray="5 4"/>
+          <!-- the interval, the thing the figure is about -->
+          <rect x="184" y="132" width="588" height="16" rx="6" transform="rotate(-0.2 478 140)" fill="#FBF3E2" stroke="#8A5A00"/>
+          <path d="M184 124 L184 156 M772 124 L772 156" stroke="#8A5A00" stroke-width="2.5"/>
+          <circle cx="478" cy="140" r="6" fill="#8A5A00" stroke="#8A5A00"/>
+          <!-- doodle: an envelope -->
+          <rect x="50" y="98" width="40" height="26" rx="2" transform="rotate(-4 70 111)" fill="#FFFFFF"/>
+          <path d="M51 100 L70 113 L89 98"/>
+        </g>
+
+        <text class="a6bL" x="390" y="82">zero: no effect</text>
+        <text class="a6bB" x="184" y="116" text-anchor="middle">-0.014</text>
+        <text class="a6bB" x="772" y="116" text-anchor="middle">+0.028</text>
+        <text class="a6bB" x="530" y="118" text-anchor="middle">+0.007 point estimate</text>
+
+        <text class="a6bS" x="100" y="210" text-anchor="middle">-0.02</text>
+        <text class="a6bS" x="240" y="210" text-anchor="middle">-0.01</text>
+        <text class="a6bS" x="380" y="210" text-anchor="middle">0</text>
+        <text class="a6bS" x="520" y="210" text-anchor="middle">+0.01</text>
+        <text class="a6bS" x="660" y="210" text-anchor="middle">+0.02</text>
+        <text class="a6bS" x="800" y="210" text-anchor="middle">+0.03</text>
+        <text class="a6bA" x="450" y="234" text-anchor="middle">DIFFERENCE, TREATED MINUS HELD OUT, ORDERS PER CUSTOMER</text>
+
+        <text class="a6bN" x="30" y="266">The interval crosses zero: no effect detected at this size. That is not the same as no effect.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the dot is what people want to quote; the bar is what the test actually knows</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>"We cannot tell it from zero" is not "email does nothing"<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The interval says the true effect of the emails over these four weeks is somewhere between a small loss of 0.014 orders per customer and a gain of 0.028. Zero is inside that range, so the test cannot rule out no effect. But a gain of 0.02 is inside it too, and across 18,000 customers that would be a real number of orders. The test did not find that email does nothing. It found that, at this size, it cannot tell.</p>
+        <p>The honest sentence names both halves: what the point estimate is, and that it cannot be distinguished from zero at this test size, with the interval written out. Then it names what would settle it. The marketing lead can decide to keep the cadence, cut it, or run a bigger test; the data team's job is to make sure she knows which of those the evidence actually supports, which tonight is none of them strongly.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Why the held-out group sets the width, and what a bigger test buys<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The interval is wide mostly because the held-out group is small. 18,000 treated customers pin down their own rate quite tightly; 2,000 held-out customers do not, and the difference can only be as precise as its least precise side. A 10 percent holdout is a common choice because it gives up few sales, and the price of that choice is exactly this width.</p>
+        <p>Two levers narrow it. <strong>A bigger held-out group</strong>: interval width shrinks with the square root of the group size, so halving the width needs roughly four times as many held-out customers. <strong>A longer test</strong>: more weeks means more orders per customer to count, which also tightens the interval, as long as the effect does not fade over the period. Both cost something real: more customers given nothing, or more weeks before a decision. How large and how long, worked out properly before the test starts, is the power calculation taught in <a href="https://phoebefu6.github.io/learn-experimentation-with-phoebe/">Experimentation ↗</a>. The analyst's job in the readout is to name the lever and the cost in a sentence, and let the marketing lead decide whether the question is worth it.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The three temptations<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>Calling it a win on the point estimate.</strong> "Email lifted orders 3.4 percent." True of the dot, false of the evidence. If the next test comes back at -0.005, the data team has spent its credibility on noise.</p>
+        <p><strong>Calling it a loss.</strong> "The test proved email doesn't work, cut the sends." The interval allows a gain of 0.028 per customer. Cutting a channel on a test too small to see it is a decision made on absence of evidence, presented as evidence of absence.</p>
+        <p><strong>Quietly not reporting it.</strong> The most common one, and the most damaging. A team that only reports tests that "worked" teaches the business that tests always work, and every future readout is discounted. A null result, written up in five lines, is how a data team earns the right to be believed when a result is real.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>The readout that nearly said "3.4 percent uplift".</strong> The first draft of Kettle &amp; Co's email readout had "+3.4% orders" as its headline in large type, with the interval in a footnote. The marketing lead would have quoted the headline to the founder the same afternoon. The rewrite put the interval in the headline sentence and added one line on what a six-week test with a larger holdout would settle. She chose to run it. Constructed example; the shape of the first draft is very common.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-3">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · covers brand health and tracker waves</span>
+      <h2>Brand health runs on the slow clock</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">Brand building, the slow clock from Angles session 1, does not show up in a holdout over four weeks. It is measured by a brand tracker: a survey repeated in waves, asking a sample of category buyers questions like "which of these tea brands have you heard of?". That one, with the list shown, is aided awareness. Kettle &amp; Co's tracker (constructed) went from 34 percent aided awareness in wave 1 to 37 percent in wave 2, each wave a sample of 500. The brand manager wants to put "+3 points" in the board pack. The 95 percent interval on that change runs from -2.9 to +8.9 points.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 326" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two hand-drawn bars of aided awareness: wave 1 at 34 percent and wave 2 at 37 percent, each a sample of 500. Each bar carries a whisker for its own uncertainty, and the two whiskers overlap across a wide band marked by dashed lines. A saffron note says the change is plus 3 points with a 95 percent interval from minus 2.9 to plus 8.9 points. Constructed Kettle and Co figures.">
+        <defs>
+          <filter id="a6cSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="71" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="a6cHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#2B22A8" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="a6cAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1A1830" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .a6cH { font: 800 12px Inter, sans-serif; fill: #1A1830; }
+          .a6cL { font: 600 12px Inter, sans-serif; fill: #1A1830; }
+          .a6cS { font: 400 11px Inter, sans-serif; fill: #5E5B78; }
+          .a6cB { font: 800 11px Inter, sans-serif; fill: #5C3C00; }
+          .a6cV { font: 800 18px Inter, sans-serif; fill: #1B1470; }
+          .a6cA { font: 700 11px Inter, sans-serif; fill: #2B22A8; letter-spacing: .05em; }
+          .a6cN { font: 400 12px Inter, sans-serif; fill: #5E5B78; }
+        </style>
+
+        <text class="a6cH" x="30" y="26">TWO TRACKER WAVES, EACH WITH ITS OWN UNCERTAINTY</text>
+        <text class="a6cS" x="440" y="26">Kettle &amp; Co, aided awareness, constructed</text>
+        <text class="a6cA" x="30" y="56">SHARE OF SAMPLE WHO RECOGNISE THE BRAND</text>
+
+        <g filter="url(#a6cSk)" fill="none" stroke="#1A1830" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <!-- baseline -->
+          <path d="M220 260 L640 260"/>
+          <!-- the two bars -->
+          <rect x="250" y="124" width="120" height="136" rx="4" transform="rotate(-0.6 310 192)" fill="#F0EFFB"/>
+          <rect x="470" y="112" width="120" height="148" rx="4" transform="rotate(0.6 530 186)" fill="#F0EFFB"/>
+          <!-- each wave's interval -->
+          <path d="M310 108 L310 140 M298 108 L322 108 M298 140 L322 140" stroke="#2B22A8" stroke-width="2.5"/>
+          <path d="M530 96 L530 128 M518 96 L542 96 M518 128 L542 128" stroke="#2B22A8" stroke-width="2.5"/>
+          <!-- the overlap band -->
+          <path d="M230 108 L620 108 M230 128 L620 128" stroke="#8A5A00" stroke-dasharray="5 4"/>
+          <!-- doodle: a survey clipboard -->
+          <rect x="790" y="210" width="40" height="52" rx="3" transform="rotate(3 810 236)" fill="#FFFFFF"/>
+          <path d="M800 210 L820 210 M798 226 L822 226 M798 238 L822 238 M798 250 L814 250"/>
+        </g>
+
+        <text class="a6cV" x="310" y="200" text-anchor="middle">34%</text>
+        <text class="a6cV" x="530" y="200" text-anchor="middle">37%</text>
+        <text class="a6cL" x="310" y="282" text-anchor="middle">wave 1, n=500</text>
+        <text class="a6cL" x="530" y="282" text-anchor="middle">wave 2, n=500</text>
+
+        <text class="a6cB" x="630" y="122">overlap</text>
+        <text class="a6cB" x="650" y="168">change +3 points</text>
+        <text class="a6cS" x="650" y="186">95% CI -2.9 to +8.9 points</text>
+
+        <text class="a6cN" x="30" y="312">Whiskers sketch each wave's interval; the +3 change sits inside the noise of two n=500 waves.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - when the whiskers overlap this much, the bars are telling you about the samples as much as about the brand</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Why +3 points between two waves is not news<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Each wave asks 500 different people. Even if Kettle &amp; Co's true awareness had not moved at all, two samples of 500 would rarely land on exactly the same percentage; a few points of difference is what sampling alone produces. The interval on the change, -2.9 to +8.9 points, says the true change could be a small fall, nothing, or a large rise. "+3 points" in a board pack, with no interval, reads as growth; with the interval, it reads as "not yet distinguishable".</p>
+        <p>Two other things move tracker numbers that have nothing to do with the brand: changes in who answers (a different panel mix, a different season) and changes in the questionnaire (a new brand added to the list, a question moved). Ask the agency, which owns the fieldwork, whether either changed between waves before reading any move at all.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Trend across many waves beats any two<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Brand effects are slow and broad, so the tracker's job is to show a direction over many waves, not a verdict between two. Five or six waves drifting the same way, each with its interval drawn, is much stronger evidence than any single pair, even when every pair on its own crosses zero. Practical habits: always plot every wave, never just the latest two; draw the interval on each point; and when a single wave jumps, wait for the next one before writing it up.</p>
+        <p>Running the tracker itself, the questionnaire, the panel, the fieldwork, is brand's and the agency's craft, and brand owns what the tracker is for. The data team is consulted: it brings the interval, the trend line, and the join to internal signals that move on the same slow clock, such as branded search volume. Data informs the bet; the business places it.</p>
+      </div>
+    </details>
+
+    <div class="callout tip">
+      <p><strong>Where this stops.</strong> Tonight covers holdouts you can read and trackers you can report. Attribution models, marketing mix modelling and the design of geo-lift tests are a whole discipline of their own, taught in <a href="https://phoebefu6.github.io/learn-marketing-attribution-with-phoebe/">Marketing Attribution ↗</a>. Experiment design in depth, power and sample size before a test starts, lives in <a href="https://phoebefu6.github.io/learn-experimentation-with-phoebe/">Experimentation ↗</a>.</p>
+    </div>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>The board slide that reversed itself.</strong> Kettle &amp; Co's brand manager once reported a two-point awareness rise as the payoff of a spring campaign. The next wave came back two points lower, and the same slide format now said the campaign had been undone. Neither move was outside the noise. The fix was a new standing slide: every wave since launch, each with its interval, and a trend line. Constructed example; the habit of reporting the latest two waves is widespread.</p>
+    </div>
+  </section>
+
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Build-along</span>
+      <h2>Read a lift test honestly, including the no-effect result</h2>
+      <span class="tag demo">★ 22 min · everyone works it through</span>
+    </div>
+    <p class="lede">No code tonight. You will write a five-line readout card for Kettle &amp; Co's email holdout (constructed): design, groups, result, interval, and the sentence for the marketing lead. The same card works for any lift test you read, including one from a platform. Work the first two steps together, then the rest alone, then compare sentences. If you bring your own test, your numbers will differ; the shape of the card stays the same.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 358" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A hand-drawn readout card pinned at the top, with five rows. Design: random 10 percent held out, 4 weeks, outcome orders per customer. Groups: treated 18,000 at 0.212, held out 2,000 at 0.205. Result: difference plus 0.007 orders per customer, 3.4 percent relative. Interval: 95 percent CI minus 0.014 to plus 0.028, crosses zero. Sentence, highlighted: the emails added about 0.007 orders per customer, but at this size that cannot be told from zero; a larger six-week holdout would settle it. Constructed figures.">
+        <defs>
+          <filter id="a6dSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="79" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="a6dHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#2B22A8" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="a6dAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1A1830" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .a6dH { font: 800 12px Inter, sans-serif; fill: #1A1830; }
+          .a6dL { font: 600 12px Inter, sans-serif; fill: #1A1830; }
+          .a6dS { font: 400 11px Inter, sans-serif; fill: #5E5B78; }
+          .a6dB { font: 800 11px Inter, sans-serif; fill: #5C3C00; }
+          .a6dA { font: 700 11px Inter, sans-serif; fill: #2B22A8; letter-spacing: .05em; }
+          .a6dN { font: 400 12px Inter, sans-serif; fill: #5E5B78; }
+        </style>
+
+        <text class="a6dH" x="30" y="26">THE LIFT READOUT CARD</text>
+        <text class="a6dS" x="200" y="26">Kettle &amp; Co email holdout, constructed · five rows, every test</text>
+
+        <g filter="url(#a6dSk)" fill="none" stroke="#1A1830" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <!-- the card -->
+          <rect x="40" y="52" width="800" height="270" rx="8" transform="rotate(-0.3 440 187)" fill="#FFFFFF"/>
+          <!-- doodle: a pin holding the card -->
+          <circle cx="440" cy="46" r="6" fill="#F0EFFB"/>
+          <path d="M440 52 L440 60"/>
+          <!-- rows -->
+          <rect x="60" y="68" width="760" height="36" rx="5" transform="rotate(0.2 440 86)" fill="#F0EFFB"/>
+          <rect x="60" y="112" width="760" height="36" rx="5" transform="rotate(-0.2 440 130)" fill="#F0EFFB"/>
+          <rect x="60" y="156" width="760" height="36" rx="5" transform="rotate(0.2 440 174)" fill="#F0EFFB"/>
+          <rect x="60" y="200" width="760" height="36" rx="5" transform="rotate(-0.2 440 218)" fill="#F0EFFB"/>
+          <rect x="60" y="244" width="760" height="62" rx="5" transform="rotate(0.2 440 275)" fill="#FBF3E2" stroke="#8A5A00"/>
+        </g>
+
+        <text class="a6dA" x="76" y="91">DESIGN</text>
+        <text class="a6dL" x="200" y="91">random 10% held out · 4 weeks · outcome: orders per customer</text>
+        <text class="a6dA" x="76" y="135">GROUPS</text>
+        <text class="a6dL" x="200" y="135">treated 18,000 at 0.212 · held out 2,000 at 0.205</text>
+        <text class="a6dA" x="76" y="179">RESULT</text>
+        <text class="a6dL" x="200" y="179">difference +0.007 orders per customer · 3.4% relative</text>
+        <text class="a6dA" x="76" y="223">INTERVAL</text>
+        <text class="a6dL" x="200" y="223">95% CI -0.014 to +0.028 · crosses zero, so not detected</text>
+        <text class="a6dB" x="76" y="270">SENTENCE</text>
+        <text class="a6dL" x="200" y="270">Emails added about 0.007 orders per customer; at this size we</text>
+        <text class="a6dL" x="200" y="290">cannot tell that from zero. A larger six-week holdout would settle it.</text>
+
+        <text class="a6dN" x="30" y="344">The decision stays with the marketing lead; the card names what would change it.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - four rows of evidence and one sentence; the sentence is the only row most people will read, so it carries the interval</figcaption>
+    </figure>
+
+    <div class="steps">
+      <div class="step">
+        <p><strong>Step 1 · Write the design.</strong> Before any result, write down how the test was built: who was split, how, for how long, and what was measured. If you cannot write this line, you cannot read the result. For Kettle &amp; Co: a random 10 percent of the email list held out for four weeks, outcome orders per customer.</p>
+        <div class="prompt-box good"><span class="label">★ Step 1 · the design</span>split:      random, at customer level, before the first send
+held out:   10% of the list, received no campaign emails
+length:     4 weeks
+outcome:    orders per customer over the 4 weeks
+decided by: the marketing lead, on the send cadence</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 2 · Write both group results.</strong> Both groups, with their sizes, side by side. Never only the treated group: a rate on its own says nothing about lift.</p>
+        <div class="prompt-box good"><span class="label">★ Step 2 · the groups</span>treated:    18,000 customers    0.212 orders per customer
+held out:    2,000 customers    0.205 orders per customer
+(constructed; your numbers will differ)</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 3 · The difference and the relative lift.</strong> Subtract, then divide by the held-out rate. Write both, because the absolute number is what the business can count and the relative number is what everyone will quote.</p>
+        <div class="prompt-box good"><span class="label">★ Step 3 · the result</span>difference: 0.212 - 0.205 = +0.007 orders per customer
+relative:   0.007 / 0.205 = about 3.4%
+your test:  difference ______    relative ______   (your numbers will differ)</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 4 · The interval, and whether it crosses zero.</strong> Write the 95 percent interval and the method used to get it. Then answer one question in plain words: does it include zero?</p>
+        <div class="prompt-box good"><span class="label">★ Step 4 · the interval</span>95% CI:      -0.014 to +0.028 orders per customer   (Poisson approximation)
+crosses 0?   yes, so no effect is detected at this test size
+also allows: a gain up to 0.028, four times the point estimate
+your test:   ______ to ______   crosses 0? ______</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 5 · The sentence for the marketing lead.</strong> One or two sentences, no jargon, with the point estimate, the honest verdict, the interval and what would settle it. This is the line she will repeat upstairs, so it must survive being repeated.</p>
+        <div class="prompt-box good"><span class="label">★ Step 5 · the sentence</span>"Over four weeks the emails added about 0.007 orders per customer, but at
+this test size we cannot tell that from zero; the interval runs from -0.014
+to +0.028. If the cadence decision matters, a larger holdout for six weeks
+would settle it."
+
+your sentence: ________________________________________________________</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 6 · Hand the decision back.</strong> The marketing lead decides what to do with the cadence: she lives with the sales and the unsubscribes either way. The data team's last line names what evidence would change the answer, and stops there.</p>
+        <div class="prompt-box good"><span class="label">★ Step 6 · the handover</span>decision owner:      marketing lead
+options she has:     keep the cadence / change it / run the bigger test
+what would change it: a larger holdout over six weeks whose interval
+                      sits clear of zero, on either side
+data's next step:    size that test if she asks for it (Experimentation)</div>
+      </div>
+    </div>
+
+    <div class="callout tip">
+      <p><strong>Use the card for platform lift tests too.</strong> When Meta or Google returns a lift result, fill the same five rows from its method notes. If you cannot fill the design row or the interval row from what the platform gives you, that gap is itself the finding, and it belongs in the sentence.</p>
+    </div>
+  </section>
+
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Before your next session</h2>
+      <span class="tag exercise">30 min</span>
+    </div>
+    <ol>
+      <li><strong>Find one campaign your company judged on before-and-after or platform ROAS</strong> and write which things besides the campaign could have moved the number.</li>
+      <li><strong>Fill a readout card</strong> for any test your team has run, or for a platform lift report, and mark any row you could not fill.</li>
+      <li><strong>Rewrite one past "win" or "no result" sentence</strong> so it carries the interval and says what would settle it.</li>
+      <li><strong>Plot every wave of one brand tracker metric</strong> with an interval on each point, and write one line on whether the trend says more than the latest pair.</li>
+    </ol>
+  </section>
+
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions</h2>
+    </div>
+    <p>Clear all three and Angles session 6 gets stamped in your passport.</p>
+
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · Kettle &amp; Co's Meta campaign shows a platform ROAS of 4.1, and a lift test puts incremental ROAS at 1.56 (constructed). Why does the holdout-based number beat the platform's?</p>
+      <button class="qopt" type="button">A · Because the platform number is always inflated by exactly the same factor</button>
+      <button class="qopt" type="button">B · Because the lift test compares against a random group that saw no ads, so it subtracts the people who would have bought anyway; platform ROAS credits them under a window and model the platform chose</button>
+      <button class="qopt" type="button">C · Because 1.56 is smaller, and the cautious number is always right</button>
+      <button class="qopt" type="button">D · Because platform attribution uses no data at all</button>
+      <p class="qwhy">Only a comparable group that was not shown the ads can reveal what the ads caused. Platform ROAS grades its own homework; the holdout supplies the answer key.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="3">
+      <p class="qtext">2 · An email holdout shows +0.007 orders per customer with a 95 percent interval of -0.014 to +0.028 (constructed). How should it be reported?</p>
+      <button class="qopt" type="button">A · "Email lifted orders by 3.4 percent."</button>
+      <button class="qopt" type="button">B · "The test proved email has no effect; cut the sends."</button>
+      <button class="qopt" type="button">C · Leave it out of the readout, since nothing was found</button>
+      <button class="qopt" type="button">D · State the point estimate, say it cannot be told from zero at this test size, give the interval, and name what a larger or longer test would settle</button>
+      <p class="qwhy">An interval that crosses zero means no effect was detected, not that there is no effect. All three temptations, the win, the loss and the silence, cost the data team credibility.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">3 · Aided awareness moved from 34 to 37 percent between two tracker waves of n=500 each, with a 95 percent interval on the change of -2.9 to +8.9 points (constructed). Why is this not news?</p>
+      <button class="qopt" type="button">A · Two samples of 500 differ by a few points through sampling alone, and the interval on the change includes zero; a trend across many waves is the evidence worth reporting</button>
+      <button class="qopt" type="button">B · Because aided awareness is not a real metric</button>
+      <button class="qopt" type="button">C · Because 3 points is always too small to matter for any brand</button>
+      <button class="qopt" type="button">D · Because brand trackers cannot measure change at all</button>
+      <p class="qwhy">The move sits inside the noise of two small waves. Brand runs on the slow clock, so plot every wave with its interval and let the trend speak.</p>
+    </div>
+
+    <p class="quiz-score"></p>
+  </section>
+
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Sources covered</span>
+      <h2>What this session teaches, and where it came from</h2>
+    </div>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Meta Business Help Center, "About Conversion Lift": randomised test and control, intent-to-treat, estimated lift, USD 5,000 spend and 500 conversions guide, no additional cost</span><span class="note">Read at source, 10 October 2026; platform pages change, so check the current help page</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Google Ads Help, "About Conversion Lift": user-based or geography-based; user-based relies mostly on opt-in traffic; not available for all accounts</span><span class="note">Read at source, 10 October 2026; platform pages change, so check the current help page</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Ron Kohavi, Diane Tang, Ya Xu, Trustworthy Online Controlled Experiments (Cambridge University Press, 2020)</span><span class="note">Publisher description read at source; chapters not read, so cited only for the discipline in general, never for a specific holdout claim</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Kettle &amp; Co email holdout, Meta ROAS against a lift test, and brand tracker waves</span><span class="note">Constructed figures; the email interval uses a Poisson approximation</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Seams: attribution models, marketing mix modelling and geo-lift design; experiment power and sample size</span><span class="note">Taught in Marketing Attribution and in Experimentation; linked, not covered here</span></div>
+    </div>
+    <p class="mono" style="margin-top:14px">Every fact on this page, and its verification tier, is recorded in the course's source map.</p>
+  </section>
+
+  <section class="cheat" id="cheatsheet">
+    <h3>Angles session 6 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Holdout = the answer key</b><span>Split at random, give one side nothing, the gap is the lift.</span></div>
+      <div class="cheat-item"><b>Platform ROAS grades itself</b><span>Its window, its model. Incremental ROAS comes from a control group.</span></div>
+      <div class="cheat-item"><b>Crosses zero = not detected</b><span>Never "it works", never "it does nothing", never silence. Give the interval.</span></div>
+      <div class="cheat-item"><b>The small group sets the width</b><span>Halving the width needs about four times the held-out customers, or more weeks.</span></div>
+      <div class="cheat-item"><b>Trackers: trend over pairs</b><span>Every wave, each with its interval. Two waves of 500 move by noise alone.</span></div>
+      <div class="cheat-item"><b>The readout card</b><span>Design, groups, result, interval, sentence. The decision stays with its owner.</span></div>
+    </div>
+  </section>
+
+  <div class="callout next">
+    <span class="nx-pill">Next session</span>
+    <p>That closes the Angles track: you can now look at marketing and say what it caused. If you have not started the Partnership track, Partnership session 1, <a href="p1-in-their-shoes.html">In their shoes</a>, turns from how to look at marketing to how to work with the people who run it: what marketing, brand and BD are measured on, and why that shapes every ask. If you want to go deeper on measurement instead, attribution models, marketing mix modelling and geo-lift continue in <a href="https://phoebefu6.github.io/learn-marketing-attribution-with-phoebe/">Marketing Attribution ↗</a>.</p>
+  </div>
+
+  <footer class="pagefoot">
+    <span>Angles session 6 of 6 · learn-marketing-analytics-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="a5-segment-and-value.html">← Prev: Segment and value</a> &nbsp;·&nbsp; <a href="../index.html">Course home</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

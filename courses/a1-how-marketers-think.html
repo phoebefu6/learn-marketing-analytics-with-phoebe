@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Angles session 1 of 6. How marketers think: the funnel as they draw it, brand building against performance and the contested 60:40 split, and the habit that changes every ask a data team receives, finding the decision behind it, who owns that decision, and what would change on the answer.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="How marketers think, and the question behind the ask - learn marketing analytics with phoebe">
+<meta property="og:description" content="Angles session 1 of 6. The funnel, the two clocks of brand and performance, and turning a vague ask into a decision question.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-marketing-analytics-with-phoebe/courses/a1-how-marketers-think.html">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-marketing-analytics-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How marketers think, and the question behind the ask - learn marketing analytics with phoebe">
+<meta name="twitter:description" content="Angles session 1 of 6. The funnel, two clocks, and the decision behind every ask.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-marketing-analytics-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Angles session 1 · How marketers think, and the question behind the ask - learn marketing analytics with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=3">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-marketing-analytics-with-phoebe</a> / Angles session 1 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn Marketing Analytics with Phoebe · Angles session 1 of 6</div>
+    <h1>How marketers think, and <span class="accent">the question behind the ask</span></h1>
+    <p class="sub">"Can you pull the TikTok numbers?" is not a question. It is the visible end of a decision somebody in marketing is about to make, and the data team that answers the visible end hands over a spreadsheet nobody needed. Tonight is the marketer's mental model, read by a data person: the funnel as marketers draw it and what each stage is really asking; the two clocks every marketing team runs on, brand building that pays over years and performance that pays this week, and why the most quoted number about the split between them is contested; and the habit that changes every ask you receive, which is to find the decision behind it, the person who owns that decision, and what would change on the answer.</p>
+    <div class="chip-row">
+      <span class="chip level">🟢 Angles</span>
+      <span class="chip audience">Data analysts and data scientists who serve marketing, brand and BD</span>
+      <span class="chip audience">No code</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:4">3-18 · The funnel, two clocks, the ask</span>
+      <span class="a3" style="flex:5">18-40 · Build-along: five asks rewritten</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where we start</h2>
+    </div>
+    <p class="lede">Two tracks run side by side. The Angles track, starting tonight, is about how to look at marketing: how marketers think, every major channel read in the same four beats, cohorts, segment value and lift. The Partnership track is about how to work with the marketing, brand and BD people who send the asks. The running company in both is Kettle &amp; Co, a constructed direct-to-consumer tea brand with a marketing lead, a brand manager, a BD lead and a data team of three. Every Kettle &amp; Co person and number is invented, and the pages say so each time. If you are a marketer looking for positioning, planning and budgets from the marketer's side, that is <a href="https://phoebefu6.github.io/learn-marketing-with-phoebe/">the Marketing course ↗</a>; this one is for the analyst across the table.</p>
+
+    <div class="legend">
+      <span class="pill">🎫 Clear all three quiz questions to stamp your passport</span>
+      <span class="pill">Live = presented in the 45 minutes</span>
+      <span class="pill">Self-study = the full depth, after class</span>
+      <span class="pill">★ Build-along = everyone works it through</span>
+    </div>
+
+    <div class="callout win">
+      <p><strong>★ What you walk out with tonight.</strong> A funnel you can read with a marketer's labels and a data person's questions, the two clocks of brand and performance and what each does to a weekly dashboard, the honest version of the 60:40 claim, and a five-part rewrite you can apply to any ask before you open a query editor.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-1">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers the funnel, as marketers draw it</span>
+      <h2>The funnel is a model, not a pipe</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">Almost every marketing plan carries a funnel: awareness at the top, then consideration, conversion, and loyalty at the bottom. Marketers use it to organise work, budgets and teams: "top of funnel" campaigns, "bottom of funnel" retargeting. A data person should read it the same way, as a model of how people come to buy, useful for sorting questions and never literally true. Real customers skip stages, loop back, and buy without ever being "aware" in any way a dashboard records.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 356" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A hand-drawn funnel of four bands: awareness, consideration, conversion, loyalty. On the left, what marketers watch at each band: reach and branded search, site visits and add to basket, orders and conversion rate, repeat orders. On the right, the data team's question at each band: did more of the right people hear of us, are they comparing us, did they buy because of us, will they buy again. A dashed arrow loops from loyalty back to consideration, and another skips from awareness straight to conversion.">
+        <defs>
+          <filter id="a1aSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="3" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="a1aHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#2B22A8" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="a1aAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1A1830" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .a1aH { font: 800 12px Inter, sans-serif; fill: #1A1830; }
+          .a1aL { font: 600 12px Inter, sans-serif; fill: #1A1830; }
+          .a1aS { font: 400 11px Inter, sans-serif; fill: #5E5B78; }
+          .a1aB { font: 800 11px Inter, sans-serif; fill: #5C3C00; }
+          .a1aA { font: 700 11px Inter, sans-serif; fill: #2B22A8; letter-spacing: .05em; }
+          .a1aW { font: 800 12px Inter, sans-serif; fill: #FFFFFF; }
+          .a1aN { font: 400 12px Inter, sans-serif; fill: #5E5B78; }
+        </style>
+
+        <text class="a1aH" x="30" y="26">THE FUNNEL, TWO WAYS OF READING IT</text>
+        <text class="a1aA" x="30" y="56">WHAT MARKETERS WATCH</text>
+        <text class="a1aA" x="610" y="56">WHAT THE DATA TEAM ASKS</text>
+
+        <g filter="url(#a1aSk)" fill="none" stroke="#1A1830" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M290 70 L590 70 L560 130 L320 130 Z" fill="#F0EFFB"/>
+          <path d="M320 136 L560 136 L535 190 L345 190 Z" fill="#F0EFFB"/>
+          <path d="M345 196 L535 196 L512 250 L368 250 Z" fill="#2B22A8" stroke="#2B22A8"/>
+          <path d="M368 256 L512 256 L495 304 L385 304 Z" fill="#FBF3E2" stroke="#8A5A00"/>
+          <!-- skip: awareness straight to conversion -->
+          <path d="M592 96 C612 140 606 196 548 222" stroke="#8A5A00" stroke-dasharray="5 4" marker-end="url(#a1aAr)"/>
+          <!-- loop: loyalty back to consideration -->
+          <path d="M370 290 C270 290 260 180 318 164" stroke="#8A5A00" stroke-dasharray="5 4" marker-end="url(#a1aAr)"/>
+          <!-- doodle: a teacup at the bottom of the funnel -->
+          <path d="M424 314 L456 314 L452 330 L428 330 Z"/>
+          <path d="M456 318 C466 318 466 326 454 326"/>
+        </g>
+
+        <text class="a1aL" x="440" y="105" text-anchor="middle">awareness</text>
+        <text class="a1aL" x="440" y="168" text-anchor="middle">consideration</text>
+        <text class="a1aW" x="440" y="228" text-anchor="middle">conversion</text>
+        <text class="a1aL" x="440" y="284" text-anchor="middle">loyalty</text>
+
+        <text class="a1aL" x="30" y="100">reach, branded search</text>
+        <text class="a1aL" x="30" y="166">site visits, add to basket</text>
+        <text class="a1aL" x="30" y="226">orders, conversion rate</text>
+        <text class="a1aL" x="30" y="284">repeat orders</text>
+
+        <text class="a1aS" x="680" y="100">did more of the right people</text>
+        <text class="a1aS" x="680" y="114">hear of us?</text>
+        <text class="a1aS" x="632" y="166">are they comparing us?</text>
+        <text class="a1aS" x="632" y="226">did they buy because of us?</text>
+        <text class="a1aS" x="632" y="284">will they buy again?</text>
+
+        <text class="a1aB" x="626" y="136">some skip</text>
+        <text class="a1aB" x="200" y="318">some loop back</text>
+
+        <text class="a1aN" x="30" y="348">A model for sorting questions, never a pipe customers flow through in order. Constructed labels.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the dashed arrows are the customers the neat funnel leaves out, and they are often the majority</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>What each stage is really asking<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>Awareness</strong> asks whether more of the right people have heard of the brand. Marketers watch reach, impressions and branded search. The data team's contribution is the word "right": reach among people who could buy, and branded search as the one awareness signal that shows up in the company's own data.</p>
+        <p><strong>Consideration</strong> asks whether people are comparing the brand with others. Site visits, product page views and add-to-basket are the usual proxies. <strong>Conversion</strong> asks whether they bought, and the data team's sharpest question lives here: did they buy <em>because of</em> the marketing, or would they have bought anyway? That question has a whole session to itself (Angles session 6). <strong>Loyalty</strong> asks whether they buy again, which is where acquisition cohorts (Angles session 4) and customer value (Angles session 5) come in.</p>
+        <p>The store funnel inside the website, from product page to checkout, is a different and narrower thing, taught in <a href="https://phoebefu6.github.io/learn-ecommerce-metrics-with-phoebe/">E-commerce Metrics ↗</a> and <a href="https://phoebefu6.github.io/learn-user-journey-analytics-with-phoebe/">User Journey Analytics ↗</a>.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Why "top of funnel" asks are the hardest to answer from data<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The further up the funnel, the less of it lives in the company's own data. A conversion is a row in the order table. Awareness is in people's heads, measured by surveys and estimated by platforms. So asks about the top of the funnel are where data teams are most tempted to over-promise ("we can measure brand awareness from clicks") and where the honest answer is often "here is the one signal we can see, branded search, and here is what it cannot tell you".</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>The funnel that was really a loop.</strong> Kettle &amp; Co's subscription customers mostly come back through email and direct visits, not through ads. A funnel report that starts every customer at "awareness" counts each repeat order as a new journey and credits the last ad they happened to see. Drawn as a loop, the same data says the loyalty stage is feeding consideration, which is a different budget conversation. Constructed example; the pattern is common in repeat-purchase categories.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-2">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers brand building and performance</span>
+      <h2>Two clocks: brand and performance</h2>
+      <span class="tag concept">6 min live</span>
+    </div>
+    <p class="lede">Marketing teams run two kinds of work on two clocks. Performance or activation marketing asks people to act now, a search ad, a discount email, and its effect shows up within days. Brand building makes the brand easier to think of and to choose later, and its effect builds slowly over months and years. A weekly dashboard sees the fast clock almost perfectly and the slow clock barely at all, which is why data teams, left alone, tend to recommend moving money from brand to performance every quarter.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A hand-drawn sales line over two years. A slowly rising baseline is shaded saffron and labelled brand building, slow. Sharp short spikes sit on top of it, labelled activation, fast. A narrow bracket over one spike is labelled what a weekly dashboard sees. A wide bracket over the whole baseline is labelled what brand work is judged on.">
+        <defs>
+          <filter id="a1bSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="17" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="a1bHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#2B22A8" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="a1bAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1A1830" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .a1bH { font: 800 12px Inter, sans-serif; fill: #1A1830; }
+          .a1bL { font: 600 12px Inter, sans-serif; fill: #1A1830; }
+          .a1bS { font: 400 11px Inter, sans-serif; fill: #5E5B78; }
+          .a1bB { font: 800 11px Inter, sans-serif; fill: #5C3C00; }
+          .a1bA { font: 700 11px Inter, sans-serif; fill: #2B22A8; letter-spacing: .05em; }
+          .a1bN { font: 400 12px Inter, sans-serif; fill: #5E5B78; }
+        </style>
+
+        <text class="a1bH" x="30" y="26">TWO CLOCKS ON ONE SALES LINE</text>
+        <text class="a1bS" x="250" y="26">a stylised shape, not data · the mechanism, not a measurement</text>
+
+        <g filter="url(#a1bSk)" fill="none" stroke="#1A1830" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M60 270 L820 270" marker-end="url(#a1bAr)"/>
+          <path d="M60 270 L60 60" marker-end="url(#a1bAr)"/>
+          <!-- the slowly rising base (brand) -->
+          <path d="M62 268 L62 230 C260 220 520 196 800 168 L800 268 Z" fill="#FBF3E2" stroke="#8A5A00"/>
+          <!-- spikes on top (activation) -->
+          <path d="M62 230 L150 222 L162 168 L176 220 L330 208 L342 150 L356 206 L520 194 L532 132 L546 192 L690 178 L702 118 L716 176 L800 168" stroke="#2B22A8" stroke-width="2.5"/>
+          <!-- narrow bracket: weekly dashboard -->
+          <path d="M520 110 L520 102 L560 102 L560 110" stroke="#2B22A8"/>
+          <!-- wide bracket: brand -->
+          <path d="M62 296 L62 304 L800 304 L800 296" stroke="#8A5A00"/>
+          <!-- doodle: a small clock -->
+          <circle cx="836" cy="84" r="14"/>
+          <path d="M836 84 L836 74 M836 84 L843 88"/>
+        </g>
+
+        <text class="a1bA" x="540" y="94" text-anchor="middle">WHAT A WEEKLY DASHBOARD SEES</text>
+        <text class="a1bL" x="190" y="160">activation: fast spikes</text>
+        <text class="a1bS" x="190" y="176">search ads, discount sends</text>
+        <text class="a1bB" x="300" y="252">brand building: the slow rise underneath</text>
+        <text class="a1bB" x="300" y="322">what brand work is judged on: years, not weeks</text>
+        <text class="a1bS" x="70" y="56">sales</text>
+        <text class="a1bS" x="780" y="288">time</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the narrow bracket is all a weekly dashboard can see, and it is all spike</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The 60:40 claim, and why it is contested<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The most quoted number in this debate comes from Les Binet and Peter Field's <em>The Long and the Short of It</em> (IPA, 2013). As summarised from the report, it drew on a databank of 996 campaigns from IPA Effectiveness Awards entries between 1980 and 2010 and put the best long-run balance at around 60 percent of budget on brand building and 40 percent on activation (reported; the report itself is paid and was not read). Marketers quote it as a rule. A data person should hold it as evidence with a shape, and four features of that shape matter.</p>
+        <p><strong>The sample.</strong> Award entries are campaigns that agencies chose to submit because they worked: a real body of evidence and a selected one. <strong>The category.</strong> Binet and Field's own later work, <em>Effectiveness in Context</em> (2018), says the ratio varies by market category, business model, brand life stage and size, and an IPA-hosted article puts its headline at 62:38 (read at source). <strong>B2B.</strong> Their report for the LinkedIn B2B Institute gives around 46 percent brand and 54 percent activation from IPA B2B cases of 1998 to 2018, calls it a rough estimate from a small sample, and carries a pull-quote saying 50/50 that disagrees with its own body text (read at source). <strong>The critics.</strong> Byron Sharp, as reported by the trade outlet Mi3 in August 2022, called the rule very misleading, objecting to the award-entry data and to "activation" never being defined (read at source as a report of a talk). Field's reply is reported only.</p>
+        <p>Both sides agree that brands need long-term brand building and short-term activation. The fight is over whether one number means anything. Teach it that way, and never resolve it in a budget meeting.</p>
+        <p>What survives the caveats is the mechanism in the figure above: brand effects are slow and broad, activation effects are fast and narrow, and a measurement system built on weekly data is structurally biased towards the fast one. That is worth saying in a budget meeting even when nobody can say whether the right split is 60:40 or 50:50.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Mental and physical availability<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Byron Sharp's <em>How Brands Grow</em> (2010), from the Ehrenberg-Bass Institute, is the other framework a data person will hear quoted. Its two central ideas, in Sharp's own words as reported from a 2022 talk: <strong>mental availability</strong>, buyers being able to notice or consider the brand, and <strong>physical availability</strong>, the brand being easy to buy. He argues growth largely depends on both, and that they must overlap: being known and hard to buy does not work. The book itself is reported here, not read. The useful part for an analyst is that both translate into questions the company's own data can partly answer: branded search and direct traffic as rough mental-availability signals, and stock-outs, listings and delivery coverage as physical availability.</p>
+        <p>Like the 60:40 split, the framework has critics who argue it over-generalises from repeat-purchase categories. Tea is one of those categories, so it fits Kettle &amp; Co better than it would fit a company selling one sofa per customer per decade.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>The quarter the brand budget went to search.</strong> A data team shows that paid search returns more revenue per pound this quarter than the brand video does, and the video budget is cut. The next two quarters, branded search volume drifts down and paid search gets more expensive per order, because fewer people are typing the brand name. Nothing in the original analysis was wrong; it measured the fast clock and was read as if it measured both. Constructed example; the mechanism is the one Part 2 draws.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-3">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · covers the decision behind the ask</span>
+      <h2>Every ask has a decision behind it</h2>
+      <span class="tag concept">4 min live</span>
+    </div>
+    <p class="lede">The single most useful habit for an analyst serving marketing is to ask, before any query: what will you decide with this, and what would you do differently depending on the answer? If nothing would change, the ask is curiosity, which is fine but goes to the back of the queue. If something would change, the decision tells you what to measure, how precisely, and by when.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A hand-drawn ladder of five rungs turning a vague ask into a decision question. Bottom rung, the ask: can you pull the TikTok numbers. Then the decision: move creator budget from TikTok to Instagram next quarter or not. Then the owner: the brand manager. Then the date: before the budget round in week 6. Top rung, what changes: if TikTok creators bring new customers at a lower cost, keep it; if not, move it. A note says data informs the bet; the business places it.">
+        <defs>
+          <filter id="a1cSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="31" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="a1cHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#2B22A8" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="a1cAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1A1830" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .a1cH { font: 800 12px Inter, sans-serif; fill: #1A1830; }
+          .a1cL { font: 600 12px Inter, sans-serif; fill: #1A1830; }
+          .a1cS { font: 400 11px Inter, sans-serif; fill: #5E5B78; }
+          .a1cB { font: 800 11px Inter, sans-serif; fill: #5C3C00; }
+          .a1cA { font: 700 11px Inter, sans-serif; fill: #2B22A8; letter-spacing: .05em; }
+          .a1cW { font: 800 12px Inter, sans-serif; fill: #FFFFFF; }
+          .a1cN { font: 400 12px Inter, sans-serif; fill: #5E5B78; }
+        </style>
+
+        <text class="a1cH" x="30" y="26">FROM THE ASK TO THE DECISION, ONE RUNG AT A TIME</text>
+        <text class="a1cS" x="420" y="26">Kettle &amp; Co, constructed</text>
+
+        <g filter="url(#a1cSk)" fill="none" stroke="#1A1830" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <!-- ladder rails -->
+          <path d="M60 300 L60 50 M120 300 L120 50" stroke-width="2.5"/>
+          <path d="M60 270 L120 270 M60 220 L120 220 M60 170 L120 170 M60 120 L120 120 M60 70 L120 70" stroke="#2B22A8" stroke-width="3"/>
+          <!-- rung cards -->
+          <rect x="150" y="252" width="560" height="38" rx="6" transform="rotate(-0.4 430 271)" fill="#FFFFFF"/>
+          <rect x="150" y="202" width="560" height="38" rx="6" transform="rotate(0.4 430 221)" fill="#F0EFFB"/>
+          <rect x="150" y="152" width="560" height="38" rx="6" transform="rotate(-0.4 430 171)" fill="#F0EFFB"/>
+          <rect x="150" y="102" width="560" height="38" rx="6" transform="rotate(0.4 430 121)" fill="#F0EFFB"/>
+          <rect x="150" y="52" width="560" height="38" rx="6" transform="rotate(-0.4 430 71)" fill="#2B22A8" stroke="#2B22A8"/>
+          <!-- doodle: a speech bubble by the ask -->
+          <path d="M740 256 L800 256 L800 282 L766 282 L756 292 L756 282 L740 282 Z" stroke="#8A5A00"/>
+        </g>
+
+        <text class="a1cA" x="164" y="276">THE ASK</text>
+        <text class="a1cL" x="260" y="276">"Can you pull the TikTok numbers?"</text>
+        <text class="a1cA" x="164" y="226">DECISION</text>
+        <text class="a1cL" x="260" y="226">move creator budget from TikTok to Instagram next quarter, or not</text>
+        <text class="a1cA" x="164" y="176">OWNER</text>
+        <text class="a1cL" x="260" y="176">the brand manager, who carries the outcome</text>
+        <text class="a1cA" x="164" y="126">BY WHEN</text>
+        <text class="a1cL" x="260" y="126">before the budget round in week 6</text>
+        <text class="a1cW" x="164" y="76">CHANGES</text>
+        <text class="a1cW" x="260" y="76">cheaper new customers from TikTok creators: keep; if not: move</text>
+
+        <text class="a1cB" x="740" y="306">where it starts</text>
+        <text class="a1cN" x="150" y="314">Data informs the bet; the business places it.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the bottom rung is what arrives in your inbox; the top rung is what you should measure</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Four questions to ask before any query<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>What will you decide with this?</strong> The answer names the decision, and the decision names the metric. "Pull the TikTok numbers" for a budget move needs new customers and their cost, not follower counts.</p>
+        <p><strong>Who decides?</strong> The person who will carry the outcome. Usually the requester; sometimes their manager. This is the decision owner, and it is never the analyst. Data informs the bet; the business places it.</p>
+        <p><strong>By when?</strong> The date the decision is made, which is often earlier than the date on the ask. Work backwards from it.</p>
+        <p><strong>What would change on each answer?</strong> If both answers lead to the same action, the analysis is not needed for this decision. Say so kindly, and offer what would change the action instead.</p>
+        <p>Running the full discovery conversation, with its own question set and meeting structure, is taught in <a href="https://phoebefu6.github.io/learn-asking-right-questions-as-da-with-phoebe/">Asking the Right Questions as a DA ↗</a>. Partnership session 3 turns these four questions into an intake template.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>When the honest answer is "nothing would change"<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Some asks are curiosity or reassurance: "how did the newsletter do?" with no next newsletter decision in sight. These are not illegitimate. A marketing lead who wants to understand her channels is building judgement she will use later. The right response is to size them honestly (a small, quick, standard answer), not to refuse them and not to let them take the slot of an ask with a decision and a date attached.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>The report that answered the wrong rung.</strong> An analyst receives "can you pull the TikTok numbers" and returns a tidy deck of views, followers and engagement rate by week. The brand manager thanks her and moves the budget anyway, on instinct, because nothing in the deck said whether TikTok creators brought customers. One question at the start, "what are you deciding with this?", would have produced one table of new customers and their cost by creator platform. Constructed example; the mechanism is the habit.</p>
+    </div>
+  </section>
+
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Build-along</span>
+      <h2>Five vague asks, rewritten as decision questions</h2>
+      <span class="tag demo">★ 22 min · everyone works it through</span>
+    </div>
+    <p class="lede">No code tonight. Five constructed asks that Kettle &amp; Co's marketing lead, brand manager and BD lead sent in one week, each rewritten with the four questions from Part 3 into a decision question with an owner and a date. Do the first one together, then the other four alone, then compare. Your rewrites will differ from the examples, and that is fine, as long as each one names a decision.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Five hand-drawn sticky notes on the left, each a vague ask: pull the TikTok numbers, how did the newsletter do, is the Meta campaign working, we need market data for Japan, can we get a dashboard. Arrows lead to five cards on the right, each a decision with an owner: move creator budget or not, brand manager; keep weekly sends or move to fortnightly, marketing lead; double Meta spend or not, marketing lead; enter Japan next year or not, BD lead; which three numbers the Monday meeting acts on, marketing lead.">
+        <defs>
+          <filter id="a1dSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="43" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="a1dHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#2B22A8" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="a1dAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1A1830" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .a1dH { font: 800 12px Inter, sans-serif; fill: #1A1830; }
+          .a1dL { font: 600 12px Inter, sans-serif; fill: #1A1830; }
+          .a1dS { font: 400 11px Inter, sans-serif; fill: #5E5B78; }
+          .a1dB { font: 800 11px Inter, sans-serif; fill: #5C3C00; }
+          .a1dA { font: 700 11px Inter, sans-serif; fill: #2B22A8; letter-spacing: .05em; }
+          .a1dN { font: 400 12px Inter, sans-serif; fill: #5E5B78; }
+        </style>
+
+        <text class="a1dH" x="30" y="26">ONE WEEK OF ASKS AT KETTLE &amp; CO</text>
+        <text class="a1dS" x="270" y="26">constructed · left: what arrived · right: the decision behind it, and its owner</text>
+        <text class="a1dA" x="40" y="54">WHAT ARRIVED</text>
+        <text class="a1dA" x="410" y="54">THE DECISION, AND WHO OWNS IT</text>
+
+        <g filter="url(#a1dSk)" fill="none" stroke="#1A1830" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="40" y="66" width="250" height="38" rx="5" transform="rotate(-1.5 165 85)" fill="#FBF3E2" stroke="#8A5A00"/>
+          <rect x="40" y="114" width="250" height="38" rx="5" transform="rotate(1.2 165 133)" fill="#FBF3E2" stroke="#8A5A00"/>
+          <rect x="40" y="162" width="250" height="38" rx="5" transform="rotate(-1 165 181)" fill="#FBF3E2" stroke="#8A5A00"/>
+          <rect x="40" y="210" width="250" height="38" rx="5" transform="rotate(1.5 165 229)" fill="#FBF3E2" stroke="#8A5A00"/>
+          <rect x="40" y="258" width="250" height="38" rx="5" transform="rotate(-1.2 165 277)" fill="#FBF3E2" stroke="#8A5A00"/>
+          <path d="M300 85 L396 85 M300 133 L396 133 M300 181 L396 181 M300 229 L396 229 M300 277 L396 277" marker-end="url(#a1dAr)"/>
+          <rect x="406" y="66" width="440" height="38" rx="6" transform="rotate(0.3 626 85)" fill="#F0EFFB"/>
+          <rect x="406" y="114" width="440" height="38" rx="6" transform="rotate(-0.3 626 133)" fill="#F0EFFB"/>
+          <rect x="406" y="162" width="440" height="38" rx="6" transform="rotate(0.3 626 181)" fill="#F0EFFB"/>
+          <rect x="406" y="210" width="440" height="38" rx="6" transform="rotate(-0.3 626 229)" fill="#F0EFFB"/>
+          <rect x="406" y="258" width="440" height="38" rx="6" transform="rotate(0.3 626 277)" fill="#F0EFFB"/>
+        </g>
+
+        <text class="a1dL" x="54" y="89">"Pull the TikTok numbers"</text>
+        <text class="a1dL" x="54" y="137">"How did the newsletter do?"</text>
+        <text class="a1dL" x="54" y="185">"Is the Meta campaign working?"</text>
+        <text class="a1dL" x="54" y="233">"We need market data for Japan"</text>
+        <text class="a1dL" x="54" y="281">"Can we get a dashboard?"</text>
+
+        <text class="a1dL" x="420" y="89">move creator budget or not</text>
+        <text class="a1dB" x="830" y="89" text-anchor="end">brand manager</text>
+        <text class="a1dL" x="420" y="137">weekly sends or fortnightly</text>
+        <text class="a1dB" x="830" y="137" text-anchor="end">marketing lead</text>
+        <text class="a1dL" x="420" y="185">double Meta spend or not</text>
+        <text class="a1dB" x="830" y="185" text-anchor="end">marketing lead</text>
+        <text class="a1dL" x="420" y="233">enter Japan next year or not</text>
+        <text class="a1dB" x="830" y="233" text-anchor="end">BD lead</text>
+        <text class="a1dL" x="420" y="281">which 3 numbers Monday acts on</text>
+        <text class="a1dB" x="830" y="281" text-anchor="end">marketing lead</text>
+
+        <text class="a1dN" x="30" y="322">Every owner on the right is a business person. None of them is the data team.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the saffron notes are what lands in the inbox; the right column is what the data team should be measuring for</figcaption>
+    </figure>
+
+    <div class="steps">
+      <div class="step">
+        <p><strong>Step 1 · "Pull the TikTok numbers."</strong> From the brand manager. Ask the four questions out loud. The decision is the creator budget split for next quarter; the owner is her; the date is the budget round. What changes: new customers and their cost by creator platform, not followers.</p>
+        <div class="prompt-box good"><span class="label">★ Step 1 · the rewrite</span>ask:       "Pull the TikTok numbers"
+decision:  move part of the creator budget from TikTok to Instagram next quarter, or not
+owner:     brand manager          by when: before the budget round, week 6
+changes:   if TikTok creators bring new customers more cheaply, keep the split; if not, move it
+measure:   new customers and cost per new customer, by creator platform, last two quarters</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 2 · "How did the newsletter do?"</strong> From the marketing lead. Often curiosity; find out whether a decision is near. At Kettle &amp; Co one is: whether to keep weekly sends.</p>
+        <div class="prompt-box good"><span class="label">★ Step 2 · the rewrite</span>decision:  keep weekly sends, or move to fortnightly
+owner:     marketing lead         by when: ____________
+changes:   ______________________________________________
+measure:   ______________________________________________   (hint: not open rate; Angles session 3 says why)</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 3 · "Is the Meta campaign working?"</strong> From the marketing lead. "Working" usually means "should I spend more". Name the spend decision and what evidence would justify it.</p>
+        <div class="prompt-box good"><span class="label">★ Step 3 · the rewrite</span>decision:  double Meta spend next month, or not
+owner:     marketing lead         by when: ____________
+changes:   ______________________________________________
+measure:   ______________________________________________   (hint: whose number is "ROAS"?)</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 4 · "We need market data for Japan."</strong> From the BD lead. The decision is BD's and so is most of the knowledge it needs. Write the decision, then write the one piece only data can supply.</p>
+        <div class="prompt-box good"><span class="label">★ Step 4 · the rewrite</span>decision:  enter Japan next year, or not
+owner:     BD lead                by when: ____________
+data's piece: ___________________________________________   (hint: what do our own orders already say?)
+not data's:   ___________________________________________</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 5 · "Can we get a dashboard?"</strong> A dashboard is not a decision; a recurring meeting is. Find the meeting and the decisions it makes.</p>
+        <div class="prompt-box good"><span class="label">★ Step 5 · the rewrite</span>decision:  which three numbers the Monday marketing meeting acts on, and what action each triggers
+owner:     marketing lead         by when: ____________
+changes:   ______________________________________________</div>
+      </div>
+      <div class="step">
+        <p><strong>Step 6 · Check every rewrite.</strong> Each one must name a decision with at least two possible actions, a business owner, a date, and what would tip it. If any owner is "data", rewrite it: the analyst informs the decision and does not own it.</p>
+        <div class="prompt-box good"><span class="label">★ Step 6 · the check</span>[ ] decision has two or more actions      [ ] owner is a business person
+[ ] date is the decision date, not the ask date
+[ ] "changes" says what answer tips it    [ ] the measure follows from the decision</div>
+      </div>
+    </div>
+
+    <div class="callout tip">
+      <p><strong>Keep the five as a reference.</strong> Most asks a marketing team sends are one of these five shapes: a channel budget, a send cadence, a spend increase, a market entry, a meeting that needs numbers. Partnership session 2 tags each shape by whose knowledge it needs.</p>
+    </div>
+  </section>
+
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Before Angles session 2</h2>
+      <span class="tag exercise">30 min</span>
+    </div>
+    <ol>
+      <li><strong>Rewrite three real asks</strong> you received this month with the four questions: decision, owner, date, what changes.</li>
+      <li><strong>Draw your company's funnel</strong> with the marketer's metric and your data question at each stage, and mark one place customers skip or loop.</li>
+      <li><strong>Find one brand number and one performance number</strong> your company reports, and write which clock each one runs on.</li>
+      <li><strong>Bring your organic search and social exports</strong> if you have them. Angles session 2 reads owned and earned channels in four beats.</li>
+    </ol>
+  </section>
+
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions</h2>
+    </div>
+    <p>Clear all three and Angles session 1 gets stamped in your passport.</p>
+
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">1 · The brand manager asks you to "pull the TikTok numbers". What is the most useful first move?</p>
+      <button class="qopt" type="button">A · Export views, followers and engagement rate by week</button>
+      <button class="qopt" type="button">B · Tell her TikTok data is unreliable</button>
+      <button class="qopt" type="button">C · Ask what she will decide with them, by when, and what would change on the answer; then measure for that decision</button>
+      <button class="qopt" type="button">D · Build a TikTok dashboard so she can explore</button>
+      <p class="qwhy">The ask is the bottom rung. The decision behind it, here the creator budget split before the budget round, names the metric: new customers and their cost, not followers.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">2 · Why do data teams, left alone, tend to recommend moving money from brand to performance?</p>
+      <button class="qopt" type="button">A · Weekly data sees the fast clock of activation almost perfectly and the slow clock of brand building barely at all, so the measurement is structurally biased towards performance</button>
+      <button class="qopt" type="button">B · Because performance marketing always has a higher return</button>
+      <button class="qopt" type="button">C · Because the 60:40 rule says so</button>
+      <button class="qopt" type="button">D · Because brand marketing cannot be measured at all</button>
+      <p class="qwhy">The bias comes from the measurement window, not from the true effects. Saying so in a budget meeting is useful even when nobody knows the right split.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="3">
+      <p class="qtext">3 · A marketing lead quotes "60 percent brand, 40 percent activation" as a rule. What is the honest data-team response?</p>
+      <button class="qopt" type="button">A · Agree, because it comes from a large study</button>
+      <button class="qopt" type="button">B · Dismiss it as marketing folklore</button>
+      <button class="qopt" type="button">C · Insist on 50:50 instead</button>
+      <button class="qopt" type="button">D · Treat it as evidence with a shape: drawn from award entries, revised to 62:38 by its own authors, said by them to vary by category, about 46:54 for B2B, and attacked by critics; keep the mechanism, hold the number loosely</button>
+      <p class="qwhy">Contested evidence gets taught as contested. The slow and fast clocks survive the caveats; the precise split does not travel unchanged to every company.</p>
+    </div>
+
+    <p class="quiz-score"></p>
+  </section>
+
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Sources covered</span>
+      <h2>What this session teaches, and where it came from</h2>
+    </div>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">The funnel as a marketer's model: awareness, consideration, conversion, loyalty</span><span class="note">Standard marketing practice; no single source; the store funnel is taught in E-commerce Metrics</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Binet and Field: 60:40 (2013, reported), 62:38 and "varies by category" (2018, read at source via IPA and Thinkbox pages), about 46:54 for B2B (read at source)</span><span class="note">Taught as a disagreement with Sharp's critique (read at source as a Mi3 report); not resolved</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Byron Sharp, How Brands Grow (2010): mental and physical availability</span><span class="note">Definitions read at source in a 2022 report of Sharp's talk; the book is reported; its critics named in one line</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">The decision behind the ask: decision, owner, date, what changes</span><span class="note">Practitioner habit; the full discovery interview is taught in Asking the Right Questions as a DA</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Five Kettle &amp; Co asks and their rewrites</span><span class="note">Constructed; the five shapes are common</span></div>
+    </div>
+    <p class="mono" style="margin-top:14px">Every fact on this page, and its verification tier, is recorded in the course's source map.</p>
+  </section>
+
+  <section class="cheat" id="cheatsheet">
+    <h3>Angles session 1 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>The funnel is a model</b><span>Use it to sort questions. Customers skip and loop; draw both.</span></div>
+      <div class="cheat-item"><b>Two clocks</b><span>Activation is fast and narrow, brand is slow and broad. Weekly data sees only the first.</span></div>
+      <div class="cheat-item"><b>60:40, held loosely</b><span>Award entries; 62:38 in 2018; about 46:54 for B2B; contested. Keep the mechanism, not the dial.</span></div>
+      <div class="cheat-item"><b>Four questions first</b><span>What will you decide? Who decides? By when? What would change on each answer?</span></div>
+      <div class="cheat-item"><b>The owner is never data</b><span>Data informs the bet; the business places it.</span></div>
+      <div class="cheat-item"><b>Curiosity is allowed</b><span>Size it small and honest; do not let it take a decision's slot.</span></div>
+    </div>
+  </section>
+
+  <div class="callout next">
+    <span class="nx-pill">Next session</span>
+    <p>You can find the decision behind an ask. Angles session 2 opens the owned and earned channels, search, content, organic social and creators, and PR, and reads each in the same four beats: what it is, what marketers watch, the number that looks good and decides nothing, and where a data team adds value a marketer cannot easily add alone.</p>
+  </div>
+
+  <footer class="pagefoot">
+    <span>Angles session 1 of 6 · learn-marketing-analytics-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="../index.html">← Course home</a> &nbsp;·&nbsp; <a href="a2-owned-and-earned-channels.html">Next: Owned and earned channels →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

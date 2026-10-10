@@ -1,0 +1,98 @@
+"""Kettle & Co request stream (CONSTRUCTED) -> assets/mkta-sample.js via json.dumps.
+
+This file is the one source of truth for the 24 asks. mkta_reference.py imports ASKS from here;
+the browser reads the generated assets/mkta-sample.js. Hours are modelled, not measured.
+Run from anywhere:  python3 materials/build-sample.py
+"""
+import json, os
+
+# fields: id, ask, req, area, tag (internal|both|external), correct (own|consult|redirect),
+# deliver (the named DA deliverable for the consulted / owned part), raci,
+# hC (DA hours, consulted part), hOwn (DA hours if data owns the ask),
+# hAll (DA hours if data takes all of it, including the decision), arr (working day it lands),
+# due (working day it is needed by), anecdote (a refusal leaves the business deciding on anecdote)
+ASKS = [
+ dict(id=1,  ask="Which search queries bring buyers, not browsers?", req="Marketing lead", area="SEO", tag="internal", correct="own",
+      deliver="Query-to-revenue join: Search Console queries x landing page x orders, top 20 by revenue", raci="Data A/R · Marketing C",
+      hC=3, hOwn=6, hAll=10, arr=1, due=6, anecdote=True),
+ dict(id=2,  ask="Followers are up 40 percent. Is TikTok working?", req="Brand manager", area="Organic social", tag="internal", correct="own",
+      deliver="Social-referred sessions and orders by month, next to follower count", raci="Data A/R · Brand C",
+      hC=2, hOwn=4, hAll=8, arr=2, due=8, anecdote=True),
+ dict(id=3,  ask="Which creators actually drove sales?", req="Marketing lead", area="Creators", tag="both", correct="consult",
+      deliver="Orders and new customers by creator code and link, one table; brand fit stays with marketing", raci="Marketing A/R · Data C (sales table) · Brand C",
+      hC=5, hOwn=14, hAll=24, arr=2, due=9, anecdote=True),
+ dict(id=4,  ask="Did the newspaper feature move anything?", req="Brand manager", area="PR", tag="internal", correct="own",
+      deliver="Branded search and direct sessions, two weeks before and after, with last year's same weeks", raci="Data A/R · Brand C",
+      hC=2, hOwn=3, hAll=6, arr=3, due=7, anecdote=True),
+ dict(id=5,  ask="Is paid brand search just buying clicks we would get free?", req="Marketing lead", area="Paid search", tag="internal", correct="own",
+      deliver="Brand-term pause test design and read: paid plus organic clicks, on and off weeks", raci="Data A/R · Marketing C",
+      hC=3, hOwn=6, hAll=10, arr=4, due=10, anecdote=True),
+ dict(id=6,  ask="Meta says ROAS is 4.1. Can we double the budget?", req="Marketing lead", area="Paid social", tag="both", correct="consult",
+      deliver="Holdout design and incrementality read; the budget call stays with marketing", raci="Marketing A/R · Data C (lift read) · Finance I",
+      hC=6, hOwn=16, hAll=28, arr=5, due=12, anecdote=True),
+ dict(id=7,  ask="Opens jumped to 48 percent. Is the new subject line genius?", req="Marketing lead", area="Email", tag="internal", correct="own",
+      deliver="Clicks and orders per send, opens set aside as unreliable after Apple Mail Privacy Protection", raci="Data A/R · Marketing C",
+      hC=1, hOwn=2, hAll=4, arr=5, due=8, anecdote=True),
+ dict(id=8,  ask="Which affiliates are just coupon sites?", req="BD lead", area="Affiliate", tag="internal", correct="own",
+      deliver="New vs returning customers and basket by affiliate; share of orders that already had a cart", raci="Data A/R · BD C",
+      hC=3, hOwn=5, hAll=9, arr=6, due=12, anecdote=True),
+ dict(id=9,  ask="Was the trade fair worth it?", req="BD lead", area="Events", tag="both", correct="consult",
+      deliver="Badge scans matched to accounts and orders within 90 days; the go-again call stays with BD", raci="BD A/R · Data C (match table)",
+      hC=3, hOwn=8, hAll=16, arr=7, due=13, anecdote=True),
+ dict(id=10, ask="Negotiate the influencer agency's rates for us.", req="Brand manager", area="Influencer", tag="external", correct="redirect",
+      deliver="None: a commercial negotiation. Data can share last quarter's creator table if asked", raci="Brand A/R · Procurement C · Data I",
+      hC=1, hOwn=10, hAll=14, arr=7, due=12, anecdote=False),
+ dict(id=11, ask="Can data do the market research on matcha drinkers in Japan?", req="BD lead", area="Market research", tag="external", correct="consult",
+      deliver="One page: our existing Japan orders, repeat rate and search demand from Japan; fieldwork stays with BD", raci="BD A/R · Data C (internal evidence) · Agency R (fieldwork)",
+      hC=3, hOwn=30, hAll=40, arr=8, due=15, anecdote=True),
+ dict(id=12, ask="Write our full UK supermarket penetration strategy.", req="BD lead", area="Penetration strategy", tag="external", correct="consult",
+      deliver="Repeat rate, basket and price sensitivity of current UK online customers by region; the strategy stays with BD", raci="BD A/R · Data C (customer evidence) · Marketing C",
+      hC=4, hOwn=40, hAll=60, arr=9, due=18, anecdote=True),
+ dict(id=13, ask="How big is the UK premium tea market for us?", req="BD lead", area="Market sizing", tag="both", correct="consult",
+      deliver="Bottom-up half: our conversion, price and repeat by segment; BD owns the top-down market figures", raci="BD A · BD R (top-down) · Data R (bottom-up)",
+      hC=5, hOwn=20, hAll=30, arr=10, due=16, anecdote=True),
+ dict(id=14, ask="Who is our ideal B2B customer for office tea?", req="BD lead", area="ICP definition", tag="both", correct="consult",
+      deliver="Profile of current B2B accounts by size, sector and 6-month retention; BD owns the ICP and its targeting", raci="BD A/R · Data R (account evidence)",
+      hC=5, hOwn=16, hAll=24, arr=10, due=17, anecdote=True),
+ dict(id=15, ask="Are we ready to launch on Amazon?", req="Marketing lead", area="Channel readiness", tag="both", correct="consult",
+      deliver="SKU repeat rate and margin after marketplace fees, top 15 SKUs; the launch call stays with marketing", raci="Marketing A/R · Data C (SKU evidence) · Ops C",
+      hC=4, hOwn=14, hAll=22, arr=11, due=18, anecdote=True),
+ dict(id=16, ask="Autumn campaign results by Friday, please.", req="Marketing lead", area="Campaign readout", tag="internal", correct="own",
+      deliver="Campaign readout: spend, orders, new customers, against the pre-agreed success metric", raci="Data A/R · Marketing C",
+      hC=3, hOwn=6, hAll=10, arr=12, due=16, anecdote=True),
+ dict(id=17, ask="Build us a weekly marketing dashboard.", req="Marketing lead", area="Dashboard", tag="internal", correct="own",
+      deliver="Weekly dashboard: one decision per tile, definitions written under each number", raci="Data A/R · Marketing C",
+      hC=4, hOwn=10, hAll=14, arr=12, due=19, anecdote=True),
+ dict(id=18, ask="Subscriptions dipped in September. Why?", req="Marketing lead", area="Churn dip", tag="internal", correct="own",
+      deliver="Cancellations by acquisition channel and tenure, against the same month last year", raci="Data A/R · Marketing C",
+      hC=4, hOwn=8, hAll=14, arr=13, due=17, anecdote=True),
+ dict(id=19, ask="Review competitor X's new range and pricing.", req="Brand manager", area="Competitor review", tag="external", correct="redirect",
+      deliver="None: external market reading. Data can add our own price-change history if asked", raci="Brand A/R · Data I",
+      hC=2, hOwn=12, hAll=16, arr=13, due=18, anecdote=False),
+ dict(id=20, ask="Can data run the brand tracking survey this quarter?", req="Brand manager", area="Brand survey", tag="both", correct="consult",
+      deliver="Sample weighting and a significance read of the agency's wave results; the questionnaire and fieldwork stay with brand", raci="Brand A/R · Agency R (fieldwork) · Data C (analysis)",
+      hC=4, hOwn=20, hAll=28, arr=14, due=19, anecdote=True),
+ dict(id=21, ask="Write the tagline brief for the rebrand.", req="Brand manager", area="Positioning", tag="external", correct="redirect",
+      deliver="None: creative and positioning work", raci="Brand A/R · Data I",
+      hC=1, hOwn=8, hAll=10, arr=14, due=19, anecdote=False),
+ dict(id=22, ask="Read the email holdout test for us.", req="Marketing lead", area="Lift test", tag="internal", correct="own",
+      deliver="Holdout read: treated vs held-out orders per customer with an interval, including a no-effect result", raci="Data A/R · Marketing C",
+      hC=2, hOwn=4, hAll=6, arr=15, due=19, anecdote=True),
+ dict(id=23, ask="CAC and payback by channel for the budget round.", req="Marketing lead", area="Segment value", tag="internal", correct="own",
+      deliver="CAC, 6-month gross margin and payback month by acquisition channel cohort", raci="Data A/R · Marketing C · Finance C",
+      hC=4, hOwn=8, hAll=14, arr=16, due=20, anecdote=True),
+ dict(id=24, ask="Why are office-tea trials not converting?", req="BD lead", area="B2B funnel", tag="internal", correct="own",
+      deliver="Trial-to-paid funnel by account size and trial length, with the base under every stage", raci="Data A/R · BD C",
+      hC=3, hOwn=5, hAll=9, arr=17, due=20, anecdote=True),
+]
+CONFIG = dict(analysts=3, hoursPerAnalyst=40, days=20, company="Kettle & Co", constructed=True)
+
+if __name__ == "__main__":
+    here = os.path.dirname(os.path.abspath(__file__))
+    out = os.path.join(here, "..", "assets", "mkta-sample.js")
+    payload = {"config": CONFIG, "asks": ASKS}
+    with open(out, "w", encoding="utf-8") as f:
+        f.write("/* mkta-sample.js - GENERATED by materials/build-sample.py with json.dumps. Do not edit by hand.\n")
+        f.write(" * Kettle & Co is a constructed company; every ask and every hour is modelled. */\n")
+        f.write("window.MKTA_SAMPLE = " + json.dumps(payload, ensure_ascii=True, indent=1) + ";\n")
+    print("wrote", os.path.normpath(out), len(ASKS), "asks")

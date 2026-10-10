@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Partnership session 2 of 4. The ownership map: every ask from marketing, brand and BD tagged by the knowledge it needs, external market, internal evidence or both, and a request triage desk where 24 constructed asks meet a three-analyst month. Saying yes to everything and saying no to everything both fail, in different columns.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="The ownership map: a request triage desk - learn marketing analytics with phoebe">
+<meta property="og:description" content="Partnership session 2 of 4. External, internal or both. 24 asks, 120 hours, and the two ways a data team fails its marketing partners.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-marketing-analytics-with-phoebe/courses/p2-the-ownership-map.html">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-marketing-analytics-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The ownership map: a request triage desk - learn marketing analytics with phoebe">
+<meta name="twitter:description" content="Partnership session 2 of 4. Yes to everything starves the queue; no to everything feeds decisions on anecdote.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-marketing-analytics-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Partnership session 2 · The ownership map: a request triage desk - learn marketing analytics with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=3">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-marketing-analytics-with-phoebe</a> / Partnership session 2 of 4</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn Marketing Analytics with Phoebe · Partnership session 2 of 4</div>
+    <h1>The ownership map: <span class="accent">a request triage desk</span></h1>
+    <p class="sub">Every week a data team serving marketing hears two complaints that sound opposite. "Why is data so slow?" and "Why won't data just do the market research?" They are the same complaint. Both come from asks that never had an owner written next to them. Tonight every ask gets three things: the knowledge it needs (the external market, internal evidence, or both), a RACI row, and, wherever data is consulted, a named deliverable with a date. Then 24 constructed asks from Kettle &amp; Co's marketing lead, brand manager and BD lead land on a three-analyst month, and the bench shows what happens when the team says yes to all of them, no to all of the ones it does not own, or splits them by the map.</p>
+    <div class="chip-row">
+      <span class="chip level">🔴 Bench</span>
+      <span class="chip audience">Data analysts and data scientists who serve marketing, brand and BD</span>
+      <span class="chip audience">Browser only, no code</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:3">3-14 · Three kinds of knowledge</span>
+      <span class="a3" style="flex:6">14-40 · The triage desk, then the two models</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where we start</h2>
+    </div>
+    <p class="lede">Kettle &amp; Co is a constructed direct-to-consumer tea brand: a marketing lead, a brand manager, a BD lead, and a data team of three. Every ask on this page is invented and so is every hour; what is real is the shape of the month, which anyone who has sat on a data team serving marketing will recognise. The stance argued here is that market research and market penetration strategy belong to marketing and BD, and that data is consulted on them with real deliverables. The reason is not tidiness. Whoever lives with the outcome owns the decision, and a data team that writes the strategy has quietly taken the decision away from the person who will be judged on it. The page also teaches the other model fairly, because some good teams run it.</p>
+
+    <div class="legend">
+      <span class="pill">🎫 Clear all three quiz questions to stamp your passport</span>
+      <span class="pill">Live = presented in the 45 minutes</span>
+      <span class="pill">Self-study = the full depth, after class</span>
+      <span class="pill">★ Bench = every number computed in your browser</span>
+    </div>
+
+    <div class="callout win">
+      <p><strong>★ What you walk out with tonight.</strong> A three-way tag you can put on any ask in ten seconds, a RACI matrix for 24 common marketing asks that you can print and adapt, the two failure modes named with their costs, and one sentence for the reason behind the split: data informs the bet; the business places it.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-1">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers the three knowledge tags</span>
+      <h2>External, internal, or both</h2>
+      <span class="tag concept">8 min live</span>
+    </div>
+    <p class="lede">Before "who should do this", ask "what would somebody need to know to answer it". Some asks need knowledge of the market outside the company: what competitors charge, what a supermarket buyer wants, which tagline will land. Marketing and BD live in that world and own it. Some asks need evidence that exists only inside the company's own data: which search queries brought buyers, whether the newspaper feature moved branded search. Data owns those. And a third group needs both halves at once, which is where every ownership fight starts.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two overlapping hand-drawn ovals. The left oval, external market, owned by marketing and BD, holds competitor review, the tagline brief, agency rate deals and research fieldwork. The right oval, internal evidence, owned by data, holds campaign readout, the query-to-revenue join, churn dip by channel and the email holdout read. The overlap is shaded saffron and labelled both, split contract. An arrow from a box below points into the overlap; the box lists the split asks: market sizing, ICP, channel readiness, creator sales, paid social lift, the trade fair and the brand tracker.">
+        <defs>
+          <filter id="p2aSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="11" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="p2aHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#2B22A8" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="p2aAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1A1830" stroke-width="1.6" stroke-linecap="round"/></marker>
+          <clipPath id="p2aCl"><ellipse cx="580" cy="175" rx="190" ry="115"/></clipPath>
+        </defs>
+        <style>
+          .p2aH { font: 800 12px Inter, sans-serif; fill: #1A1830; }
+          .p2aL { font: 600 12px Inter, sans-serif; fill: #1A1830; }
+          .p2aS { font: 400 11px Inter, sans-serif; fill: #5E5B78; }
+          .p2aB { font: 800 11px Inter, sans-serif; fill: #5C3C00; }
+          .p2aA { font: 700 11px Inter, sans-serif; fill: #2B22A8; }
+          .p2aN { font: 400 12px Inter, sans-serif; fill: #5E5B78; }
+        </style>
+
+        <text class="p2aH" x="30" y="26">WHAT THE ASK NEEDS TO KNOW</text>
+        <text class="p2aS" x="230" y="26">tag the knowledge first, then the owner follows from it · constructed Kettle &amp; Co asks</text>
+
+        <g filter="url(#p2aSk)" fill="none" stroke="#1A1830" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <ellipse cx="300" cy="175" rx="190" ry="115" fill="#FFFFFF"/>
+          <ellipse cx="580" cy="175" rx="190" ry="115" fill="#F0EFFB" stroke="#2B22A8"/>
+          <ellipse cx="300" cy="175" rx="190" ry="115" fill="#FBF3E2" stroke="#8A5A00" clip-path="url(#p2aCl)"/>
+          <path d="M440 328 L440 222" marker-end="url(#p2aAr)"/>
+          <rect x="120" y="332" width="640" height="52" rx="10" transform="rotate(-0.3 440 358)" fill="#FBF3E2" stroke="#8A5A00"/>
+          <!-- doodle: a magnifier on the evidence side -->
+          <circle cx="812" cy="112" r="13" stroke="#2B22A8"/>
+          <path d="M821 122 L836 138" stroke="#2B22A8" stroke-width="3"/>
+        </g>
+
+        <text class="p2aH" x="150" y="108">EXTERNAL MARKET</text>
+        <text class="p2aS" x="150" y="126">marketing and BD own it</text>
+        <text class="p2aL" x="150" y="160">competitor review</text>
+        <text class="p2aL" x="150" y="182">the tagline brief</text>
+        <text class="p2aL" x="150" y="204">agency rate deals</text>
+        <text class="p2aL" x="150" y="226">research fieldwork</text>
+
+        <text class="p2aH" x="500" y="108">INTERNAL EVIDENCE</text>
+        <text class="p2aA" x="500" y="126">data owns it</text>
+        <text class="p2aL" x="500" y="160">campaign readout</text>
+        <text class="p2aL" x="500" y="182">query-to-revenue join</text>
+        <text class="p2aL" x="500" y="204">churn dip by channel</text>
+        <text class="p2aL" x="500" y="226">email holdout read</text>
+
+        <text class="p2aB" x="440" y="160" text-anchor="middle">BOTH</text>
+        <text class="p2aS" x="440" y="180" text-anchor="middle">split</text>
+        <text class="p2aS" x="440" y="196" text-anchor="middle">contract</text>
+
+        <text class="p2aB" x="140" y="353">SPLIT ASKS: NEVER ONE OWNER, ALWAYS A WRITTEN SPLIT</text>
+        <text class="p2aS" x="140" y="372">market sizing · ICP · channel readiness · creator sales · paid social lift · trade fair · brand tracker</text>
+
+        <text class="p2aN" x="30" y="408">The tag is the knowledge the ask needs, not who asked loudest. The overlap is where most fights start.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the saffron overlap is the only place where "who owns this" has no single answer, which is why it needs a contract instead</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>The ten-second tag, and what each tag implies<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>External.</strong> The answer lives in the market: competitors, buyers, agencies, retailers, culture. Marketing or BD is accountable and usually responsible. Data is informed, or consulted for one narrow internal fact. "Review competitor X's new range" is external: the analyst has no privileged view of a competitor's shelf.</p>
+        <p><strong>Internal.</strong> The answer lives in the company's own data: orders, sessions, sends, subscriptions, spend. Data is accountable and responsible; marketing is consulted on what decision the answer feeds. "Which search queries bring buyers?" is internal: only a join of search queries to orders can answer it, and marketing cannot easily build that join alone.</p>
+        <p><strong>Both.</strong> The answer needs a market half and an evidence half. Market sizing needs a top-down figure from outside and a bottom-up figure from our own conversion and price data. An ideal customer profile needs BD's knowledge of who buys and our own retention by account type. These are the rows where a single owner is always wrong: give it all to BD and the evidence half is anecdote; give it all to data and the market half is guesswork by people who do not talk to buyers.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Why tag the knowledge and not the requester<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>A common shortcut is to route by who asked: everything from BD goes to the BD analyst, everything from brand goes to the survey person. It fails because the same requester sends all three kinds of ask in one week. Kettle &amp; Co's BD lead sends an internal ask (why are office-tea trials not converting), a split ask (who is our ideal B2B customer) and an external ask dressed as a data request (write our supermarket penetration strategy) within ten working days. Routing by requester hides that; tagging by knowledge shows it.</p>
+        <p>The tag also survives reorganisations. People change roles; the fact that a competitor review needs knowledge of a competitor does not.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>The penetration strategy that arrived as a data ticket.</strong> "Write our full UK supermarket penetration strategy" reaches the data team because it contains the words "data-driven" and a deadline. Tagged, it is external with one internal thread: the repeat rate, basket and price sensitivity of current UK online customers by region. Data delivers that thread in four modelled hours. Writing the whole strategy would take about forty, and would put the analyst in front of supermarket buyers they have never met. Constructed Kettle &amp; Co example; the shape is common.</p>
+    </div>
+  </section>
+
+  <section class="section" id="bench">
+    <div class="section-kicker">
+      <span class="klabel">Build-along · the bench</span>
+      <h2>The request triage desk</h2>
+      <span class="tag demo">★ 20 min · the main event</span>
+    </div>
+    <p class="lede">Twenty-four asks land over one month of twenty working days. The team has three analysts and, after pipelines and maintenance, forty hours each for requests: 120 hours. Work the three rungs in order and say out loud what moved. Then change rows yourself: try owning the whole brand tracker, or redirecting the creator ask, and watch which column pays. Then press the break button.</p>
+
+    <div id="mkta-bench"></div>
+
+    <div class="callout tip">
+      <p><strong>Read it in this order.</strong> Hours against capacity first, then the data-owned asks that miss their date, then the decisions made on anecdote, then the match score. Every tile says "modelled" because the hours, due days and the queue rule are constructed. The rule is simple on purpose: the team works asks in the order they land, at six hours a working day, and nothing jumps the queue.</p>
+    </div>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three hand-drawn bars of analyst hours against a dashed capacity line at 120 hours. Say yes to everything: 426 hours, 9 data-owned asks miss their date, 0 decisions on anecdote. Say no to anything not ours: 67 hours, 0 asks miss, 9 decisions on anecdote. Split by the RACI: 106 hours, 0 miss, 0 on anecdote. A note says with one analyst on leave the three rungs starve 10, 1 and 6 data-owned asks.">
+        <defs>
+          <filter id="p2bSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="23" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="p2bHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#2B22A8" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="p2bAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1A1830" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .p2bH { font: 800 12px Inter, sans-serif; fill: #1A1830; }
+          .p2bL { font: 600 12px Inter, sans-serif; fill: #1A1830; }
+          .p2bS { font: 400 11px Inter, sans-serif; fill: #5E5B78; }
+          .p2bB { font: 800 11px Inter, sans-serif; fill: #5C3C00; }
+          .p2bR { font: 800 11px Inter, sans-serif; fill: #991B1B; }
+          .p2bV { font: 800 18px Inter, sans-serif; fill: #1B1470; }
+          .p2bN { font: 400 12px Inter, sans-serif; fill: #5E5B78; }
+        </style>
+
+        <text class="p2bH" x="30" y="26">THE LADDER, AS THE ENGINE PRINTS IT</text>
+        <text class="p2bS" x="300" y="26">DA hours asked of a 120-hour month · bar heights to scale · constructed asks, modelled hours</text>
+
+        <g filter="url(#p2bSk)" fill="none" stroke="#1A1830" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M60 280 L740 280"/>
+          <rect x="90" y="67" width="120" height="213" rx="4" transform="rotate(-0.4 150 173)" fill="url(#p2bHc)"/>
+          <rect x="330" y="247" width="120" height="33" rx="4" transform="rotate(0.5 390 263)" fill="#FFFFFF"/>
+          <rect x="570" y="227" width="120" height="53" rx="4" transform="rotate(-0.4 630 253)" fill="#8A5A00" stroke="#8A5A00"/>
+          <path d="M60 220 L720 220" stroke="#8A5A00" stroke-dasharray="7 5"/>
+          <!-- doodle: an hourglass -->
+          <path d="M790 70 L830 70 L810 96 L830 122 L790 122 L810 96 Z" stroke="#2B22A8"/>
+        </g>
+
+        <text class="p2bV" x="218" y="84">426 h</text>
+        <text class="p2bV" x="458" y="262">67 h</text>
+        <text class="p2bV" x="698" y="246">106 h</text>
+        <text class="p2bB" x="730" y="216">capacity 120 h</text>
+
+        <text class="p2bL" x="150" y="298" text-anchor="middle">say yes to everything</text>
+        <text class="p2bR" x="150" y="316" text-anchor="middle">9 data-owned asks late</text>
+        <text class="p2bS" x="150" y="332" text-anchor="middle">0 decided on anecdote</text>
+
+        <text class="p2bL" x="390" y="298" text-anchor="middle">say no to anything not ours</text>
+        <text class="p2bS" x="390" y="316" text-anchor="middle">0 data-owned asks late</text>
+        <text class="p2bR" x="390" y="332" text-anchor="middle">9 decided on anecdote</text>
+
+        <text class="p2bL" x="630" y="298" text-anchor="middle">split by the RACI</text>
+        <text class="p2bB" x="630" y="316" text-anchor="middle">0 late · 0 on anecdote</text>
+        <text class="p2bS" x="630" y="332" text-anchor="middle">24 of 24 matched</text>
+
+        <text class="p2bN" x="30" y="366">One analyst on leave, 80 hours: the rungs starve 10, 1 and 6 data-owned asks. The split needs re-planning, not abandoning.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the two failure modes fail in different columns: one in hours, one in anecdote, and a dashboard that shows only hours will praise the second</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>What the three rungs show, in the engine's own numbers<span class="mini">5 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>Say yes to everything</strong> asks 426 hours of a 120-hour month. The team is not lazy and not slow; it is writing a penetration strategy (60 modelled hours), a market research study (40) and a brand tracker (28) while the campaign readout, the dashboard, the churn dip, the holdout read, the CAC table and the B2B funnel wait behind them. Nine of the twelve asks only data can do miss their date. Zero asks match the RACI, because taking all of an internal ask still means making the business decision that follows it.</p>
+        <p><strong>Say no to anything not ours</strong> uses 67 hours and nothing is late. It looks like the best-run team in the building. It also leaves nine decisions to be made on anecdote: the creator budget, the Meta budget, the trade fair, the Japan research, the supermarket plan, the market size, the ICP, the Amazon launch and the brand tracker all go ahead without the internal half of their evidence. Fifteen of 24 asks match, because the internal and purely external rows are right and every split row is wrong.</p>
+        <p><strong>Split by the RACI</strong> uses 106 hours, nothing is late, nothing is decided on anecdote, and all 24 match. It is not free: it costs 39 hours more than saying no, and those hours are the consulted deliverables. That is the price of "consulted" being a real job.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The break button: one analyst on leave<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Press it. Capacity drops by a third to 80 hours and the bench prints, for every rung, which data-owned asks now miss their date. Yes-to-everything starves ten. The split starves six: the campaign readout, the dashboard, the churn dip, the holdout read, the CAC table and the B2B funnel, all in the second half of the month, behind the consulted work. Say-no starves only one, the B2B funnel, and still leaves nine decisions on anecdote.</p>
+        <p>That result is the honest one and it is worth saying out loud: <strong>when capacity drops, the split does not survive unchanged.</strong> The answer is not to fall back to "no". It is to renegotiate the consulted deliverables in writing: the brand tracker read moves to next month, the Amazon evidence shrinks to the top five SKUs, and each requester hears it with a new date before the old date passes. Try it on the desk: set two of the split rows to a smaller scope by redirecting them, and read which column pays. Partnership session 4 writes the scripts for that conversation.</p>
+      </div>
+    </details>
+  </section>
+
+  <section class="section" id="part-2">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers the two organisation models</span>
+      <h2>Two honest models, and the reason for the split</h2>
+      <span class="tag concept">6 min live</span>
+    </div>
+    <p class="lede">There are two defensible ways to organise this, and teams run both. In the first, a market insights function sits inside analytics: one team owns all the evidence, internal and external, and marketing and BD consume it. In the second, the split argued here, market knowledge stays with the people who work the market, internal evidence stays with data, and every split ask carries a written contract. Neither is universal law.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two hand-drawn organisation sketches side by side. Model A, market insights inside analytics: marketing and BD send every ask into one analytics box that holds both a BI team and a market insights team; underneath, it fixes one owner for the evidence and costs analysts drifting into owning strategy. Model B, the split: a marketing and BD box holding market research and strategy, a data box holding internal evidence, and a contract between them carrying a named deliverable and a date; underneath, it fixes keeping the decision with whoever lives with it and costs a contract per split ask.">
+        <defs>
+          <filter id="p2cSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="37" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="p2cHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#2B22A8" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="p2cAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1A1830" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .p2cH { font: 800 12px Inter, sans-serif; fill: #1A1830; }
+          .p2cL { font: 600 12px Inter, sans-serif; fill: #1A1830; }
+          .p2cS { font: 400 11px Inter, sans-serif; fill: #5E5B78; }
+          .p2cB { font: 800 11px Inter, sans-serif; fill: #5C3C00; }
+          .p2cA { font: 700 11px Inter, sans-serif; fill: #2B22A8; }
+          .p2cR { font: 800 11px Inter, sans-serif; fill: #991B1B; }
+          .p2cN { font: 400 12px Inter, sans-serif; fill: #5E5B78; }
+        </style>
+
+        <text class="p2cH" x="30" y="26">MODEL A · MARKET INSIGHTS INSIDE ANALYTICS</text>
+        <text class="p2cH" x="470" y="26">MODEL B · THE SPLIT, WITH A CONTRACT</text>
+
+        <g filter="url(#p2cSk)" fill="none" stroke="#1A1830" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <!-- model A -->
+          <rect x="40" y="50" width="160" height="44" rx="8" transform="rotate(-1 120 72)" fill="#FFFFFF"/>
+          <rect x="240" y="50" width="160" height="44" rx="8" transform="rotate(1 320 72)" fill="#FFFFFF"/>
+          <path d="M120 96 L170 132" marker-end="url(#p2cAr)"/>
+          <path d="M320 96 L270 132" marker-end="url(#p2cAr)"/>
+          <rect x="60" y="138" width="320" height="104" rx="10" transform="rotate(0.4 220 190)" fill="url(#p2cHc)"/>
+          <rect x="80" y="168" width="130" height="56" rx="6" transform="rotate(-1.5 145 196)" fill="#FFFFFF"/>
+          <rect x="230" y="168" width="130" height="56" rx="6" transform="rotate(1.5 295 196)" fill="#FFFFFF"/>
+          <!-- divider -->
+          <path d="M440 44 L440 346" stroke="#CFCDE0" stroke-dasharray="4 5"/>
+          <!-- model B -->
+          <rect x="470" y="60" width="170" height="92" rx="10" transform="rotate(-0.6 555 106)" fill="#FFFFFF"/>
+          <rect x="690" y="60" width="160" height="92" rx="10" transform="rotate(0.6 770 106)" fill="#F0EFFB" stroke="#2B22A8"/>
+          <rect x="590" y="176" width="150" height="66" rx="6" transform="rotate(-1 665 209)" fill="#FBF3E2" stroke="#8A5A00"/>
+          <path d="M600 154 L630 172" marker-end="url(#p2cAr)"/>
+          <path d="M740 154 L708 172" marker-end="url(#p2cAr)"/>
+          <!-- doodle: a pen on the contract -->
+          <path d="M752 186 L790 160" stroke="#8A5A00" stroke-width="3"/>
+        </g>
+
+        <text class="p2cL" x="120" y="77" text-anchor="middle">marketing</text>
+        <text class="p2cL" x="320" y="77" text-anchor="middle">BD</text>
+        <text class="p2cH" x="76" y="158">ANALYTICS OWNS ALL EVIDENCE</text>
+        <text class="p2cL" x="145" y="193" text-anchor="middle">BI and</text>
+        <text class="p2cL" x="145" y="209" text-anchor="middle">evidence</text>
+        <text class="p2cL" x="295" y="193" text-anchor="middle">market</text>
+        <text class="p2cL" x="295" y="209" text-anchor="middle">insights</text>
+
+        <text class="p2cB" x="40" y="274">fixes: one owner for the evidence, split rows included</text>
+        <text class="p2cS" x="40" y="292">and one place to ask, one method standard</text>
+        <text class="p2cR" x="40" y="316">costs: analysts drift into owning strategy</text>
+        <text class="p2cS" x="40" y="334">and research eats the capacity the internal asks needed</text>
+
+        <text class="p2cL" x="555" y="88" text-anchor="middle">marketing and BD</text>
+        <text class="p2cS" x="555" y="108" text-anchor="middle">market research</text>
+        <text class="p2cS" x="555" y="124" text-anchor="middle">strategy, decisions</text>
+        <text class="p2cA" x="770" y="88" text-anchor="middle">data</text>
+        <text class="p2cS" x="770" y="108" text-anchor="middle">internal evidence</text>
+        <text class="p2cS" x="770" y="124" text-anchor="middle">definitions, tests</text>
+        <text class="p2cB" x="665" y="202" text-anchor="middle">THE CONTRACT</text>
+        <text class="p2cS" x="665" y="220" text-anchor="middle">named deliverable</text>
+        <text class="p2cS" x="665" y="234" text-anchor="middle">+ a date</text>
+
+        <text class="p2cB" x="470" y="274">fixes: the decision stays with whoever lives with it</text>
+        <text class="p2cS" x="470" y="292">and data capacity goes to what only data can do</text>
+        <text class="p2cR" x="470" y="316">costs: a contract per split ask, and seams</text>
+        <text class="p2cS" x="470" y="334">that somebody has to manage every quarter</text>
+
+        <text class="p2cN" x="30" y="368">Both models are run by good teams. The argument for B is about who owns the outcome, not about who is cleverer.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - in model A the hatched box owns everything; in model B the saffron contract is the only thing the two sides share</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>What model A fixes, and what it costs<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>What it fixes.</strong> The split rows get one owner for the evidence, so market sizing does not arrive as two numbers from two teams that never met. Research method gets one standard: sample sizes, weighting and survey design are owned by people trained in them. Marketing and BD get one door to knock on.</p>
+        <p><strong>What it costs.</strong> Two things, and the bench shows both. First, analysts drift from supplying evidence into owning the conclusion: the person who wrote the sizing model starts presenting the go or no-go, and the BD lead becomes an audience for their own strategy. Second, external research is expensive in hours and lands on the same capacity as the internal asks only data can do. The yes rung on the desk is model A without its own headcount.</p>
+        <p>Model A works best when the insights function is staffed separately from the analysts who own internal evidence, and when its remit is written as "evidence for the decision" rather than "the decision".</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The reason for the split, in one line<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>Data informs the bet; the business places it.</strong> The marketing lead will be judged on the Meta budget; the BD lead on the supermarket plan. If an analyst writes the plan, three things go wrong at once: the person accountable did not make the decision they are accountable for, the analyst is now defending a strategy instead of the evidence under it, and the next time the evidence disagrees with the plan, the analyst is marking their own homework.</p>
+        <p>Decision intelligence writers make a version of this point by separating the decision-maker's role from the analyst's; data mesh writers make another by treating ownership as a domain boundary that needs an explicit contract wherever two domains meet. Neither turns the split into a rule. The split is a choice, argued from who carries the outcome, and a team that chooses model A for good reasons is not wrong.</p>
+      </div>
+    </details>
+  </section>
+
+  <section class="section" id="part-3">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · covers the RACI matrix and the real C</span>
+      <h2>Consulted is a job with a deliverable</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">RACI is the project manager's grid: responsible does the work, accountable owns the outcome and signs it off, consulted is asked before, informed is told after. Applied to the marketing and data boundary, its weak point is the C. An empty C, "data will be consulted", is how a split ask turns into either a forgotten ask or a full takeover three weeks later. A real C names the deliverable and the date.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two hand-drawn RACI rows for the same ask, are we ready to launch on Amazon. The top row has marketing A and R, ops C and data C with nothing written next to it, and a wrong-way red note: this C becomes a takeover or a forgotten ask. The bottom row has the same letters, and data's C carries SKU repeat rate and margin after fees, top 15 SKUs, by day 18.">
+        <defs>
+          <filter id="p2dSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="41" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="p2dHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#2B22A8" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="p2dAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1A1830" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .p2dH { font: 800 12px Inter, sans-serif; fill: #1A1830; }
+          .p2dL { font: 600 12px Inter, sans-serif; fill: #1A1830; }
+          .p2dS { font: 400 11px Inter, sans-serif; fill: #5E5B78; }
+          .p2dB { font: 800 11px Inter, sans-serif; fill: #5C3C00; }
+          .p2dR { font: 800 11px Inter, sans-serif; fill: #991B1B; }
+          .p2dV { font: 800 18px Inter, sans-serif; fill: #1B1470; }
+          .p2dW { font: 800 12px Inter, sans-serif; fill: #FFFFFF; }
+          .p2dN { font: 400 12px Inter, sans-serif; fill: #5E5B78; }
+        </style>
+
+        <text class="p2dH" x="30" y="26">THE SAME ASK, TWO RACI ROWS</text>
+        <text class="p2dS" x="250" y="26">"Are we ready to launch on Amazon?" · Kettle &amp; Co, constructed</text>
+
+        <g filter="url(#p2dSk)" fill="none" stroke="#1A1830" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <!-- row 1: empty C -->
+          <rect x="40" y="70" width="110" height="56" rx="6" transform="rotate(-0.5 95 98)" fill="#F0EFFB"/>
+          <rect x="160" y="70" width="110" height="56" rx="6" transform="rotate(0.5 215 98)" fill="#F0EFFB"/>
+          <rect x="280" y="70" width="110" height="56" rx="6" transform="rotate(-0.5 335 98)" fill="#FEF2F2" stroke="#991B1B"/>
+          <path d="M410 98 L470 98" stroke="#991B1B" marker-end="url(#p2dAr)"/>
+          <!-- row 2: real C -->
+          <rect x="40" y="186" width="110" height="56" rx="6" transform="rotate(0.5 95 214)" fill="#F0EFFB"/>
+          <rect x="160" y="186" width="110" height="56" rx="6" transform="rotate(-0.5 215 214)" fill="#F0EFFB"/>
+          <rect x="280" y="186" width="110" height="56" rx="6" transform="rotate(0.5 335 214)" fill="#8A5A00" stroke="#8A5A00"/>
+          <path d="M410 214 L470 214" marker-end="url(#p2dAr)"/>
+          <rect x="480" y="180" width="370" height="68" rx="8" transform="rotate(-0.4 665 214)" fill="#FBF3E2" stroke="#8A5A00"/>
+          <!-- doodle: a calendar page by the date -->
+          <rect x="806" y="70" width="30" height="28" rx="3" fill="#FFFFFF"/>
+          <path d="M806 79 L836 79 M814 66 L814 74 M828 66 L828 74"/>
+        </g>
+
+        <text class="p2dS" x="95" y="58" text-anchor="middle">marketing</text>
+        <text class="p2dS" x="215" y="58" text-anchor="middle">ops</text>
+        <text class="p2dS" x="335" y="58" text-anchor="middle">data</text>
+
+        <text class="p2dV" x="95" y="104" text-anchor="middle">A / R</text>
+        <text class="p2dV" x="215" y="104" text-anchor="middle">C</text>
+        <text class="p2dV" x="335" y="104" text-anchor="middle">C</text>
+        <text class="p2dR" x="480" y="94">an empty C: nothing named, no date</text>
+        <text class="p2dS" x="480" y="112">it becomes a forgotten ask, or a takeover in week three</text>
+
+        <text class="p2dV" x="95" y="220" text-anchor="middle">A / R</text>
+        <text class="p2dV" x="215" y="220" text-anchor="middle">C</text>
+        <text class="p2dW" x="335" y="219" text-anchor="middle">C + deliverable</text>
+        <text class="p2dB" x="496" y="204">SKU repeat rate and margin after marketplace fees,</text>
+        <text class="p2dB" x="496" y="222">top 15 SKUs, by working day 18</text>
+        <text class="p2dS" x="496" y="238">the launch call stays with marketing</text>
+
+        <text class="p2dN" x="30" y="286">Same letters, different job. The second row can be late, and so it can be managed; the first cannot even be late.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the red cell is the empty C; the saffron cell is the same letter with a job attached</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The matrix: 24 asks, tagged, with the C written out<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Print this block and adapt it to your own team. The hours are Kettle &amp; Co's modelled hours; yours will differ. A is accountable, R responsible, C consulted, I informed. Where data is C, the deliverable column is the contract.</p>
+        <div class="mk-print">
+          <table class="clean">
+            <tr><th>#</th><th>Ask</th><th>Tag</th><th>RACI</th><th>Data's deliverable</th><th>DA h</th></tr>
+            <tr><td>1</td><td>Which search queries bring buyers?</td><td>internal</td><td>Data A/R · Marketing C</td><td>Query-to-revenue join, top 20 by revenue</td><td>6</td></tr>
+            <tr><td>2</td><td>Followers up 40 percent: is TikTok working?</td><td>internal</td><td>Data A/R · Brand C</td><td>Social-referred sessions and orders by month, next to followers</td><td>4</td></tr>
+            <tr><td>3</td><td>Which creators drove sales?</td><td>both</td><td>Marketing A/R · Data C · Brand C</td><td>Orders and new customers by creator code and link</td><td>5</td></tr>
+            <tr><td>4</td><td>Did the newspaper feature move anything?</td><td>internal</td><td>Data A/R · Brand C</td><td>Branded search and direct sessions, before and after, against last year</td><td>3</td></tr>
+            <tr><td>5</td><td>Is paid brand search buying free clicks?</td><td>internal</td><td>Data A/R · Marketing C</td><td>Brand-term pause test, designed and read</td><td>6</td></tr>
+            <tr><td>6</td><td>Meta says ROAS 4.1: double the budget?</td><td>both</td><td>Marketing A/R · Data C · Finance I</td><td>Holdout design and incrementality read</td><td>6</td></tr>
+            <tr><td>7</td><td>Opens at 48 percent: is the subject line genius?</td><td>internal</td><td>Data A/R · Marketing C</td><td>Clicks and orders per send; opens set aside</td><td>2</td></tr>
+            <tr><td>8</td><td>Which affiliates are coupon sites?</td><td>internal</td><td>Data A/R · BD C</td><td>New vs returning and basket by affiliate</td><td>5</td></tr>
+            <tr><td>9</td><td>Was the trade fair worth it?</td><td>both</td><td>BD A/R · Data C</td><td>Badge scans matched to orders within 90 days</td><td>3</td></tr>
+            <tr><td>10</td><td>Negotiate the influencer agency's rates</td><td>external</td><td>Brand A/R · Procurement C · Data I</td><td>None</td><td>0</td></tr>
+            <tr><td>11</td><td>Market research on matcha drinkers in Japan</td><td>external</td><td>BD A/R · Agency R · Data C</td><td>Existing Japan orders, repeat and search demand, one page</td><td>3</td></tr>
+            <tr><td>12</td><td>Write the UK supermarket penetration strategy</td><td>external</td><td>BD A/R · Data C · Marketing C</td><td>Repeat, basket and price sensitivity by region</td><td>4</td></tr>
+            <tr><td>13</td><td>How big is the UK premium tea market for us?</td><td>both</td><td>BD A · BD R top-down · Data R bottom-up</td><td>Bottom-up from our conversion, price and repeat</td><td>5</td></tr>
+            <tr><td>14</td><td>Who is our ideal B2B customer?</td><td>both</td><td>BD A/R · Data R (evidence)</td><td>Current B2B accounts by size, sector, 6-month retention</td><td>5</td></tr>
+            <tr><td>15</td><td>Are we ready to launch on Amazon?</td><td>both</td><td>Marketing A/R · Data C · Ops C</td><td>SKU repeat and margin after fees, top 15</td><td>4</td></tr>
+            <tr><td>16</td><td>Autumn campaign results by Friday</td><td>internal</td><td>Data A/R · Marketing C</td><td>Readout against the pre-agreed success metric</td><td>6</td></tr>
+            <tr><td>17</td><td>A weekly marketing dashboard</td><td>internal</td><td>Data A/R · Marketing C</td><td>One decision per tile, definitions under each number</td><td>10</td></tr>
+            <tr><td>18</td><td>Subscriptions dipped in September: why?</td><td>internal</td><td>Data A/R · Marketing C</td><td>Cancellations by channel and tenure against last year</td><td>8</td></tr>
+            <tr><td>19</td><td>Review competitor X's range and pricing</td><td>external</td><td>Brand A/R · Data I</td><td>None</td><td>0</td></tr>
+            <tr><td>20</td><td>Run the brand tracking survey</td><td>both</td><td>Brand A/R · Agency R · Data C</td><td>Weighting and a significance read of the wave</td><td>4</td></tr>
+            <tr><td>21</td><td>Write the tagline brief for the rebrand</td><td>external</td><td>Brand A/R · Data I</td><td>None</td><td>0</td></tr>
+            <tr><td>22</td><td>Read the email holdout test</td><td>internal</td><td>Data A/R · Marketing C</td><td>Treated vs held-out orders with an interval</td><td>4</td></tr>
+            <tr><td>23</td><td>CAC and payback by channel</td><td>internal</td><td>Data A/R · Marketing C · Finance C</td><td>CAC, 6-month margin and payback month by cohort</td><td>8</td></tr>
+            <tr><td>24</td><td>Why are office-tea trials not converting?</td><td>internal</td><td>Data A/R · BD C</td><td>Trial-to-paid funnel with the base under every stage</td><td>5</td></tr>
+          </table>
+        </div>
+        <p style="margin-top:10px"><button class="btn" type="button" onclick="window.print()">Print this page</button> &nbsp; The RACI as a general project tool, including how to run the workshop that fills it, lives in <a href="https://phoebefu6.github.io/learn-tech-project-pmo-with-phoebe/courses/05-ownership-and-raci.html">Tech Project PMO, session 5 ↗</a>. This page applies it to the marketing and data boundary only.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Three rules for the matrix that are about behaviour, not letters<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>One A per row.</strong> Two accountable owners is no accountable owner. On split rows, the A sits with the business side and data is R for its half, which is how market sizing reads "BD A, BD R top-down, data R bottom-up".</p>
+        <p><strong>Every data C has a deliverable and a date.</strong> If you cannot name what data hands over, the C is decoration and should be an I.</p>
+        <p><strong>Review the matrix when capacity changes.</strong> The break button showed that the right split at 120 hours starves six asks at 80. The matrix is a plan for a month, not a constitution.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>The brand tracker nobody owned.</strong> A brand team commissions a tracking survey from an agency and asks the data team to "help with the analysis". Nobody writes down what help means. Three weeks later the analyst is rewriting the questionnaire, the agency is waiting, and the brand manager is reading a deck she did not shape. Written as a C with a deliverable, "weighting and a significance read of the wave, four modelled hours, by working day 19", the same ask is small, on time and still hers. Constructed example; the pattern is common.</p>
+    </div>
+  </section>
+
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Before Partnership session 3</h2>
+      <span class="tag exercise">30 min</span>
+    </div>
+    <ol>
+      <li><strong>Tag your last ten asks</strong> from marketing, brand or BD as external, internal or both. Count each. If more than a third are "both", your team needs written contracts more than it needs headcount.</li>
+      <li><strong>Find one empty C</strong> in your own work: an ask where data was "consulted" with nothing named. Write the deliverable and the date it should have had.</li>
+      <li><strong>Run the desk with one change of your own:</strong> own the whole brand tracker (row 20) under the RACI rung and write down which column paid, and by how much.</li>
+      <li><strong>Bring one ask you are not sure how to tag.</strong> Partnership session 3 turns it into a scoped request with an intake template.</li>
+    </ol>
+  </section>
+
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions</h2>
+    </div>
+    <p>Clear all three and Partnership session 2 gets stamped in your passport.</p>
+
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">1 · BD asks the data team to "size the UK premium tea market for us". How should it be tagged and owned?</p>
+      <button class="qopt" type="button">A · Internal: data owns it, because sizing is a model and models are data's job</button>
+      <button class="qopt" type="button">B · External: redirect it to BD, because markets are BD's job</button>
+      <button class="qopt" type="button">C · Both: BD is accountable and owns the top-down market figures; data is responsible for the bottom-up half from our own conversion, price and repeat data, written as a named deliverable with a date</button>
+      <button class="qopt" type="button">D · Whoever has capacity this week</button>
+      <p class="qwhy">Sizing needs a market half and an evidence half. A single owner is wrong either way: all-BD leaves the evidence half to anecdote, all-data leaves the market half to people who do not talk to buyers.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">2 · On the desk, "say no to anything not ours" uses 67 of 120 hours and nothing is late. Why is it still a failure?</p>
+      <button class="qopt" type="button">A · It is not a failure; it is the most efficient rung</button>
+      <button class="qopt" type="button">B · It refuses the evidence half of every split ask, so nine decisions, from the Meta budget to the Amazon launch, go ahead on anecdote; a capacity dashboard would praise it</button>
+      <button class="qopt" type="button">C · It leaves 53 hours unused, which wastes salary</button>
+      <button class="qopt" type="button">D · It matches the RACI on only 15 rows, and the match score is what matters most</button>
+      <p class="qwhy">The two failure modes fail in different columns. Yes-to-everything fails in hours and starves data-owned asks; no-to-everything fails in anecdote decisions, which no capacity view shows.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">3 · With one analyst on leave, the RACI rung starves six data-owned asks and the say-no rung starves one. What is the right reading?</p>
+      <button class="qopt" type="button">A · The split needs re-planning for the smaller month: renegotiate the scope or date of some consulted deliverables in writing, before the old dates pass, rather than falling back to refusing the split asks</button>
+      <button class="qopt" type="button">B · Saying no is the better policy after all</button>
+      <button class="qopt" type="button">C · The engine is wrong, because the RACI rung should always win</button>
+      <button class="qopt" type="button">D · Hire a fourth analyst</button>
+      <p class="qwhy">The engine reports what the queue does. The split was right at 120 hours and does not fit in 80; the fix is a renegotiated plan, which is Partnership session 4's pushback scripts, not a return to anecdote.</p>
+    </div>
+
+    <p class="quiz-score"></p>
+  </section>
+
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Sources covered</span>
+      <h2>What this session teaches, and where it came from</h2>
+    </div>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">The ladder: 426, 67 and 106 hours of 120; 9, 0 and 0 data-owned asks late; 0, 9 and 0 decisions on anecdote; 0, 15 and 24 of 24 matched</span><span class="note">Computed by the bench engine on the constructed stream; a Python reference prints the same integers</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">The break button: at 80 hours the rungs starve 10, 1 and 6 data-owned asks</span><span class="note">Computed by the same engine; the queue rule and the hours are modelled</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">RACI: responsible, accountable, consulted, informed; one accountable per row</span><span class="note">Standard project management practice; the general tool is taught in Tech Project PMO session 5</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">The decision-maker and analyst split; ownership as a domain boundary with a contract</span><span class="note">Lenses from decision intelligence and data mesh writing, paraphrased, never quoted; the line "data informs the bet; the business places it" is this page's own phrasing</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Model A, market insights inside analytics</span><span class="note">Taught as a real alternative with its benefits and costs; no claim that either model is universal</span></div>
+    </div>
+    <p class="mono" style="margin-top:14px">Every fact on this page, and its verification tier, is recorded in the course's source map.</p>
+  </section>
+
+  <section class="cheat" id="cheatsheet">
+    <h3>Partnership session 2 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Tag the knowledge</b><span>External market, internal evidence, or both. The owner follows from the tag, not from who asked.</span></div>
+      <div class="cheat-item"><b>Both means a contract</b><span>Split asks never have one owner. Business A, data R for the evidence half, written down.</span></div>
+      <div class="cheat-item"><b>A real C</b><span>Every data C names a deliverable and a date. A C you cannot name is an I.</span></div>
+      <div class="cheat-item"><b>Two failure modes</b><span>Yes to all: 426 of 120 hours, 9 owned asks late. No to all: 9 decisions on anecdote.</span></div>
+      <div class="cheat-item"><b>When capacity drops</b><span>Re-plan the consulted deliverables in writing. Do not fall back to "no".</span></div>
+      <div class="cheat-item"><b>The reason</b><span>Data informs the bet; the business places it. Whoever lives with the outcome owns the decision.</span></div>
+    </div>
+  </section>
+
+  <div class="callout next">
+    <span class="nx-pill">Next session</span>
+    <p>You can tag an ask and write a real C. Partnership session 3 builds the front door: an intake template that turns "can you do market research?" into a business question, a decision, a decision owner, a deadline and what changes on the answer, and a one-page menu of what data offers marketing, with turnaround times.</p>
+  </div>
+
+  <footer class="pagefoot">
+    <span>Partnership session 2 of 4 · learn-marketing-analytics-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="p1-in-their-shoes.html">← Prev: In their shoes</a> &nbsp;·&nbsp; <a href="p3-intake-and-the-service-menu.html">Next: Intake and the service menu →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/mkta-sample.js?v=1"></script>
+<script src="../assets/mkta-live.js?v=1"></script>
+<script src="../assets/mkta-bench.js?v=1"></script>
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

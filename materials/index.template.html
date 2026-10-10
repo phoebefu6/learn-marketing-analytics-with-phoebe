@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Marketing analytics for data teams. Six Angles sessions on how to look at marketing (how marketers think, owned and earned channels, paid and lifecycle channels, acquisition cohorts by channel, segment and value, campaign lift and brand health) and four Partnership sessions on working with marketing, brand and BD (their scoreboards, the ownership map and a request triage desk, intake and a service menu, pushing back well). Free, by Phoebe Fu.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="Learn Marketing Analytics with Phoebe">
+<meta property="og:description" content="Read every channel in four beats, and know whose job each ask is. A triage desk where saying yes to everything starves the queue and saying no to everything feeds decisions on anecdote.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-marketing-analytics-with-phoebe/">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-marketing-analytics-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Learn Marketing Analytics with Phoebe">
+<meta name="twitter:description" content="Two tracks: the angles on marketing, and the partnership with marketing, brand and BD.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-marketing-analytics-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Learn Marketing Analytics with Phoebe</title>
+<link rel="stylesheet" href="assets/style.css?v=3">
+<style>
+
+  .stats-row { display: flex; gap: 2.4rem; margin-top: 1.5rem; flex-wrap: wrap; }
+  .stat b { display: block; font-size: 2.1rem; font-weight: 800; line-height: 1.05; font-variant-numeric: tabular-nums; }
+  .stat span { font-size: .72rem; opacity: .85; text-transform: uppercase; letter-spacing: .09em; font-weight: 600; }
+
+  .course-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+  .course-card {
+    border: 1px solid var(--hairline);
+    border-top: 4px solid var(--diff, var(--indigo));
+    border-radius: var(--radius);
+    padding: 1.2rem 1.3rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    text-decoration: none;
+    color: var(--ink);
+    background: #fff;
+    transition: box-shadow .15s ease, border-color .15s ease, transform .15s ease;
+    position: relative;
+  }
+  .course-card:hover { border-color: var(--indigo-soft); border-top-color: var(--diff, var(--indigo)); box-shadow: 0 8px 28px rgba(var(--shadow-rgb),.16); transform: translateY(-3px); }
+  .course-card .cicon { font-size: 1.7rem; line-height: 1; }
+  .course-card .cnum { font-size: .72rem; font-weight: 700; color: var(--indigo); text-transform: uppercase; letter-spacing: .1em; }
+  .course-card h3 { font-size: 1.05rem; font-weight: 800; line-height: 1.3; }
+  .course-card p { font-size: .85rem; color: var(--muted); flex: 1; }
+  .course-card .meta { display: flex; gap: .4rem; flex-wrap: wrap; }
+
+  .diff-legend { display: flex; gap: 1rem; margin-top: 1.6rem; font-size: .74rem; color: var(--muted); font-weight: 600; flex-wrap: wrap; }
+  .diff-legend i { display: inline-block; width: .85rem; height: .35rem; border-radius: 999px; margin-right: .35rem; vertical-align: middle; }
+
+  .paths { margin-top: 2.6rem; }
+  .paths h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: .3rem; }
+  .paths .plede { color: var(--muted); font-size: .92rem; margin-bottom: .8rem; }
+  .path { display: flex; gap: .55rem; align-items: center; padding: .75rem 0; border-bottom: .5px solid var(--hairline); flex-wrap: wrap; }
+  .path:last-child { border-bottom: none; }
+  .path b { min-width: 15.5rem; font-size: .9rem; }
+  .path .pstep { background: var(--indigo-50); color: var(--indigo); border-radius: 999px; padding: .16rem .68rem; font-weight: 700; font-size: .8rem; text-decoration: none; transition: all .12s ease; }
+  .path .pstep:hover { background: var(--indigo); color: #fff; }
+  .path .parr { color: var(--muted); font-weight: 700; }
+
+  .mm-section { margin-top: 1.6rem; }
+  .mm-section h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: .2rem; }
+  .mm-section .mm-lede { color: var(--muted); font-size: .92rem; margin-bottom: .4rem; }
+  .mm-wrap { border: 1px solid var(--hairline); border-radius: var(--radius); background: linear-gradient(180deg,#fff,var(--indigo-50)); padding: .6rem; overflow-x: auto; }
+  .mm-svg { width: 100%; height: auto; display: block; max-width: 60rem; margin: 0 auto; min-width: 34rem; }
+  .mm-link { cursor: pointer; text-decoration: none; }
+  .mm-node rect { transition: opacity .15s ease, filter .15s ease; }
+  .mm-node text { pointer-events: none; }
+  .mm-link:hover .mm-node rect { filter: brightness(1.06); }
+  .mm-edge { transition: opacity .15s ease; }
+
+  .not-this { border: 1px solid var(--hairline); border-left: 4px solid var(--clay); border-radius: var(--radius); background: #fff; padding: 1.1rem 1.3rem; margin-top: 1.2rem; }
+  .not-this h3 { font-size: .95rem; font-weight: 800; margin-bottom: .5rem; }
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn with Phoebe · Data &amp; Analytics</div>
+    <h1>Learn <span class="accent">Marketing Analytics</span> with Phoebe</h1>
+    <p class="sub">Data analysts who serve marketing, brand and BD get two kinds of question wrong. The first kind is about the numbers: a follower count that decides nothing, an open rate inflated since 2021, a platform ROAS the platform grades itself. The second kind is about the job: "why won't data do our market research?" These ten sessions teach both. Six Angles sessions read every channel in the same four beats, what it is, what marketers watch, the vanity trap, and where data adds value, then cohorts, segment value and lift. Four Partnership sessions stand in marketing's shoes, tag every ask by the knowledge it needs, and draw the line the whole course argues for: market research and penetration strategy belong to marketing and BD, and data is consulted with a named deliverable and a date. The running company, Kettle &amp; Co, is constructed.</p>
+    <div class="stats-row">
+      <div class="stat"><b data-count="10">10</b><span>sessions, two tracks</span></div>
+      <div class="stat"><b data-count="11">11</b><span>channels in four beats</span></div>
+      <div class="stat"><b data-count="24">24</b><span>asks on the triage desk</span></div>
+      <div class="stat"><b data-count="2">2</b><span>failure modes, measured</span></div>
+      <div class="stat"><b data-count="45">45</b><span>min per session</span></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="section">
+    <div class="paths" style="margin-top:0">
+      <h2>Angles track 🧭 <span style="font-size:.85rem;font-weight:600;color:var(--muted)">· six sessions, no code needed</span></h2>
+      <p class="plede">The angles from which a data team looks at marketing. How marketers think and what they really ask, eleven channels read in the same four beats, acquisition cohorts by channel, segment value and payback, and lift tests read honestly, including the result that says nothing worked.</p>
+    </div>
+    <div class="course-grid">
+{{ANGLES_CARDS}}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="paths" style="margin-top:0">
+      <h2>Partnership track 🤝 <span style="font-size:.85rem;font-weight:600;color:var(--muted)">· four sessions, the working relationship</span></h2>
+      <p class="plede">How to work with marketing, brand and BD: their scoreboards and calendar, whose job each ask is, the front door and the service menu, and how to say no with a deliverable and a date. The bench is a request triage desk computed in your browser.</p>
+    </div>
+    <div class="course-grid">
+{{PARTNERSHIP_CARDS}}
+    </div>
+    <div class="diff-legend">
+      <span><i style="background:#34D399"></i>foundations</span>
+      <span><i style="background:#FBBF24"></i>core</span>
+      <span><i style="background:#FB923C"></i>stretch</span>
+      <span><i style="background:#F87171"></i>bench night</span>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="paths" style="margin-top:0">
+      <h2>Your passport 🎫</h2>
+      <p class="plede">Clear all three quiz questions in a session and it gets stamped. Ten stamps means you can read any marketing channel's numbers for what they decide, tag any ask by whose job it is, and say no with a deliverable and a date. Stamps live in this browser only.</p>
+    </div>
+    <div class="pp-strip"></div>
+  </section>
+
+  <section class="section">
+    <div class="not-this">
+      <h3>What this is not, so you land in the right place 🧭</h3>
+      <table class="clean">
+        <tr><th>If your question is</th><th>Go here instead</th></tr>
+        <tr><td>I am a marketer: how do I position, plan and budget?</td><td><a href="https://phoebefu6.github.io/learn-marketing-with-phoebe/">Marketing ↗</a></td></tr>
+        <tr><td>Which touchpoint gets the credit, and how do MMM and geo-lift work?</td><td><a href="https://phoebefu6.github.io/learn-marketing-attribution-with-phoebe/">Marketing Attribution ↗</a></td></tr>
+        <tr><td>How do I use AI to write the SEO, content, ads and emails?</td><td><a href="https://phoebefu6.github.io/learn-ai-marketing-with-phoebe/">AI + Marketing ↗</a></td></tr>
+        <tr><td>How do I compute CLV or build a churn model?</td><td><a href="https://phoebefu6.github.io/learn-customer-retention-with-phoebe/">Customer Retention ↗</a></td></tr>
+        <tr><td>How do I read the store funnel and the checkout?</td><td><a href="https://phoebefu6.github.io/learn-ecommerce-metrics-with-phoebe/">E-commerce Metrics ↗</a> · <a href="https://phoebefu6.github.io/learn-user-journey-analytics-with-phoebe/">User Journey Analytics ↗</a></td></tr>
+        <tr><td>How do I run the discovery interview itself?</td><td><a href="https://phoebefu6.github.io/learn-asking-right-questions-as-da-with-phoebe/">Asking the Right Questions ↗</a></td></tr>
+        <tr><td><strong>I am the analyst marketing, brand and BD come to, and I want to read their numbers well and know whose job each ask is.</strong></td><td><strong>you are in the right place</strong></td></tr>
+      </table>
+      <p style="margin-top:.7rem;font-size:.86rem;color:var(--muted)"><strong>Marketing analytics as a working relationship.</strong> Kettle &amp; Co is constructed; platform facts are read from the platforms' own help pages and dated; contested claims, such as the 60:40 brand split, are taught as contested.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="paths">
+      <h2>Choose your path 🗺️</h2>
+      <p class="plede">Three doors into the same conviction: read the number for the decision it informs, and know whose decision it is.</p>
+      <div class="path"><b>🧭 I read marketing's numbers</b>
+        {{PATH_1}}
+        <span style="font-size:.82rem;color:var(--muted)">the channels, cohorts, value and lift</span>
+      </div>
+      <div class="path"><b>🤝 I am drowning in asks</b>
+        {{PATH_2}}
+        <span style="font-size:.82rem;color:var(--muted)">their shoes, the map, the front door, the scripts</span>
+      </div>
+      <div class="path"><b>🎛️ I lead the data team</b>
+        {{PATH_3}}
+        <span style="font-size:.82rem;color:var(--muted)">the question behind the ask, then the whole partnership</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="paths" style="margin-top:0">
+      <h2>What is honest here 🧾</h2>
+      <p class="plede">The running company is constructed and says so on every page. Platform facts are read from the platforms' own pages and dated, because they change. Where a claim is contested, the page teaches both sides.</p>
+    </div>
+    <table class="clean">
+      <tr><th>Claim</th><th>Status</th></tr>
+      <tr><td>Kettle &amp; Co, its people, its 24 asks, its hours and its channel data</td><td><strong>Constructed,</strong> and labelled each time</td></tr>
+      <tr><td>Every number on the triage desk</td><td><strong>Computed in your browser</strong> from the constructed stream; a Python reference prints the same integers; the queue rule and hours are modelled</td></tr>
+      <tr><td>How search, attribution windows, conversion modelling and Mail Privacy Protection work</td><td><strong>Read at the platforms' own pages,</strong> dated, and flagged to re-check before you rely on them</td></tr>
+      <tr><td>The 60:40 brand and activation split</td><td><strong>Contested,</strong> and taught as contested: the original claim, its category caveats and its critics</td></tr>
+      <tr><td>Market research and penetration strategy belong to marketing and BD</td><td><strong>A stance, argued with its reason,</strong> next to the alternative model that some good teams run</td></tr>
+    </table>
+  </section>
+
+  <section class="section mm-section">
+    <h2>The knowledge map 🧠</h2>
+    <p class="mm-lede">Both tracks at a glance - hover a session to spotlight its concepts, click any node to jump in.</p>
+    <div class="mm-wrap"><div id="mindmap"></div></div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>learn-marketing-analytics-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span>Neighbours on the shelf: <a href="https://phoebefu6.github.io/learn-marketing-attribution-with-phoebe/">Marketing Attribution ↗</a> &nbsp;·&nbsp; <a href="https://phoebefu6.github.io/learn-marketing-with-phoebe/">Marketing ↗</a> &nbsp;·&nbsp; <a href="https://phoebefu6.github.io/learn-customer-retention-with-phoebe/">Customer Retention ↗</a></span>
+  </footer>
+
+</main>
+
+<script>
+window.MINDMAP_DATA = {{MINDMAP_JSON}};
+</script>
+<script src="assets/mindmap.js?v=1"></script>
+<script src="assets/app.js?v=1"></script>
+</body>
+</html>
